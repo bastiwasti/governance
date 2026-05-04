@@ -1,0 +1,12 @@
+node_modules/
+.next/
+dist/
+out/
+build/
+coverage/
+data/
+*.db
+*.tsbuildinfo
+next-env.d.ts
+public/
+package-lock.json
