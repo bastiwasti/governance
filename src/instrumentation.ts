@@ -3,6 +3,7 @@ export async function register() {
     const { default: cron } = await import("node-cron");
     const { pollAllServices } = await import("./lib/poller");
     const { collectAllStats } = await import("./lib/stats-collector");
+    const { runRetention } = await import("./lib/retention");
 
     cron.schedule("0 * * * *", () => {
       pollAllServices().catch(console.error);
@@ -16,6 +17,10 @@ export async function register() {
 
     cron.schedule("*/5 * * * *", () => {
       collectAllInfra().catch(console.error);
+    });
+
+    cron.schedule("0 3 * * *", () => {
+      runRetention();
     });
 
     void pollAllServices().catch(console.error);

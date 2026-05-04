@@ -4,7 +4,8 @@ import { StatusBadge } from "@/components/status-badge";
 import { UptimeChart, ResponseTimeChart } from "@/components/charts";
 import { Tabs } from "@/components/tabs";
 import { StatsView } from "@/components/stats";
-import type { Service, UptimeCheck, StatsSnapshot } from "@/lib/types";
+import { IncidentList } from "@/components/incident-list";
+import type { Service, UptimeCheck, StatsSnapshot, Incident } from "@/lib/types";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
@@ -44,6 +45,14 @@ export default async function ServiceDetailPage({
     ? JSON.parse(latestStats.data_json)
     : null;
 
+  const incidents = db
+    .prepare(
+      "SELECT * FROM incidents WHERE service_id = ? ORDER BY started_at DESC LIMIT 50"
+    )
+    .all(service.id) as Incident[];
+
+  const openIncidents = incidents.filter((i) => i.status === "open");
+
   return (
     <>
       <div className="mb-6">
@@ -81,6 +90,20 @@ export default async function ServiceDetailPage({
 
       {service.notes && (
         <p className="mb-6 text-sm text-zinc-500">{service.notes}</p>
+      )}
+
+      {openIncidents.length > 0 && (
+        <div className="mb-6 rounded-lg border border-red-900/50 bg-red-950/30 p-4">
+          <p className="text-sm font-medium text-red-400">
+            {openIncidents.length} offener Incident
+            {openIncidents.length > 1 ? "s" : ""}
+          </p>
+          {openIncidents.map((inc) => (
+            <p key={inc.id} className="mt-1 text-xs text-red-400/70">
+              Seit {new Date(inc.started_at).toLocaleString("de-DE")} — {inc.severity}
+            </p>
+          ))}
+        </div>
       )}
 
       <Tabs
@@ -194,6 +217,13 @@ export default async function ServiceDetailPage({
                   </p>
                 )}
               </div>
+            ),
+          },
+          {
+            id: "incidents",
+            label: `Incidents${incidents.length > 0 ? ` (${incidents.length})` : ""}`,
+            content: (
+              <IncidentList incidents={incidents} />
             ),
           },
         ]}

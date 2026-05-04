@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { StatusBadge } from "./status-badge";
+import { AlertTriangle, Globe, Terminal } from "lucide-react";
 import type { ServiceWithLatestCheck } from "@/lib/types";
 
 function formatUptime(pct: number | null): string {
@@ -19,6 +20,11 @@ function timeAgo(ts: string | null): string {
   return `vor ${days} Tag${days > 1 ? "en" : ""}`;
 }
 
+function TypeIcon({ type }: { type: string }) {
+  if (type === "cli") return <Terminal className="h-3 w-3" />;
+  return <Globe className="h-3 w-3" />;
+}
+
 export function ServiceCard({
   service,
 }: {
@@ -27,6 +33,11 @@ export function ServiceCard({
   return (
     <Link href={`/services/${service.slug}`}>
       <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-5 transition-colors hover:border-zinc-700">
+        {service.open_incident ? (
+          <div className="mb-3 -mx-5 -mt-5 rounded-t-lg bg-red-950/50 border-b border-red-900/50 px-5 py-2 text-xs text-red-400">
+            Offener Incident
+          </div>
+        ) : null}
         <div className="mb-3 flex items-start justify-between">
           <div>
             <h3 className="font-semibold text-zinc-100">{service.name}</h3>
@@ -34,7 +45,8 @@ export function ServiceCard({
               <p className="text-xs text-zinc-500">{service.url}</p>
             )}
           </div>
-          <span className="rounded bg-zinc-800 px-2 py-0.5 text-xs text-zinc-400">
+          <span className="flex items-center gap-1 rounded bg-zinc-800 px-2 py-0.5 text-xs text-zinc-400">
+            <TypeIcon type={service.type} />
             {service.type}
           </span>
         </div>
@@ -52,7 +64,8 @@ export function ServiceCard({
         </div>
 
         {!service.stats_available && (
-          <p className="text-xs text-amber-500/80">
+          <p className="flex items-center gap-1 text-xs text-amber-500/80">
+            <AlertTriangle className="h-3 w-3" />
             Stats: kein Endpoint
           </p>
         )}

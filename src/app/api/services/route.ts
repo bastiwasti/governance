@@ -12,12 +12,14 @@ export async function GET() {
         uc.timestamp as latest_check_time,
         (SELECT COUNT(*) FROM uptime_checks uc2 WHERE uc2.service_id = s.id AND uc2.status = 'up' AND uc2.timestamp > datetime('now', '-24 hours')) * 100.0
           / NULLIF((SELECT COUNT(*) FROM uptime_checks uc3 WHERE uc3.service_id = s.id AND uc3.timestamp > datetime('now', '-24 hours')), 0) as uptime_24h,
-        CASE WHEN ss.id IS NOT NULL THEN 1 ELSE 0 END as stats_available
+        CASE WHEN ss.id IS NOT NULL THEN 1 ELSE 0 END as stats_available,
+        CASE WHEN inc.id IS NOT NULL THEN 1 ELSE 0 END as open_incident
       FROM services s
       LEFT JOIN uptime_checks uc ON uc.id = (
         SELECT id FROM uptime_checks WHERE service_id = s.id ORDER BY timestamp DESC LIMIT 1
       )
       LEFT JOIN stats_snapshots ss ON ss.service_id = s.id AND ss.collected_at > datetime('now', '-2 days')
+      LEFT JOIN incidents inc ON inc.service_id = s.id AND inc.status = 'open'
       GROUP BY s.id
       ORDER BY s.name`
     )

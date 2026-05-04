@@ -47,6 +47,29 @@ export type ServiceCreateInput = Omit<
   "id" | "created_at" | "updated_at"
 >;
 
+export interface Incident {
+  id: number;
+  service_id: number;
+  status: "open" | "resolved";
+  severity: "down" | "degraded";
+  started_at: string;
+  resolved_at: string | null;
+  duration_minutes: number | null;
+  trigger_check_id: number | null;
+  resolve_check_id: number | null;
+}
+
+export interface Webhook {
+  id: number;
+  url: string;
+  label: string | null;
+  events: string;
+  is_active: number;
+  created_at: string;
+}
+
+export type WebhookCreateInput = Omit<Webhook, "id" | "created_at">;
+
 export type ServiceUpdateInput = Partial<ServiceCreateInput>;
 
 export interface ServiceWithLatestCheck extends Service {
@@ -55,4 +78,5 @@ export interface ServiceWithLatestCheck extends Service {
   latest_check_time: string | null;
   uptime_24h: number | null;
   stats_available: boolean;
+  open_incident: number;
 }
