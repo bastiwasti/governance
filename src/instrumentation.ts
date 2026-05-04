@@ -12,7 +12,14 @@ export async function register() {
       collectAllStats().catch(console.error);
     });
 
+    const { collectAllInfra } = await import("./lib/ssh-collector");
+
+    cron.schedule("*/5 * * * *", () => {
+      collectAllInfra().catch(console.error);
+    });
+
     void pollAllServices().catch(console.error);
     void collectAllStats().catch(console.error);
+    void collectAllInfra().catch(console.error);
   }
 }
