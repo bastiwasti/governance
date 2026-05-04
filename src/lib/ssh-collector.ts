@@ -47,14 +47,22 @@ interface ContainerInfo {
   status: string;
 }
 
+function parseHumanSize(val: string): number {
+  if (val.endsWith("Gi") || val.endsWith("G")) return parseFloat(val);
+  if (val.endsWith("Mi") || val.endsWith("M")) return parseFloat(val) / 1024;
+  if (val.endsWith("Ki") || val.endsWith("K")) return parseFloat(val) / 1024 / 1024;
+  if (val.endsWith("Ti") || val.endsWith("T")) return parseFloat(val) * 1024;
+  return parseFloat(val);
+}
+
 function parseDf(output: string): DiskInfo {
   const lines = output.trim().split("\n");
   const dataLine = lines.find((l) => l.startsWith("/dev/"));
   if (!dataLine) throw new Error("No /dev/ line in df output");
   const parts = dataLine.split(/\s+/);
-  const total = parseFloat(parts[1]);
-  const used = parseFloat(parts[2]);
-  const available = parseFloat(parts[3]);
+  const total = parseHumanSize(parts[1]);
+  const used = parseHumanSize(parts[2]);
+  const available = parseHumanSize(parts[3]);
   const percent = parseFloat(parts[4]);
   return {
     total_gb: Math.round(total * 100) / 100,
@@ -69,9 +77,9 @@ function parseFree(output: string): MemoryInfo {
   const memLine = lines.find((l) => l.startsWith("Mem:"));
   if (!memLine) throw new Error("No Mem: line in free output");
   const parts = memLine.split(/\s+/);
-  const total = parseFloat(parts[1]);
-  const used = parseFloat(parts[2]);
-  const available = parseFloat(parts[6] || parts[3]);
+  const total = parseHumanSize(parts[1]);
+  const used = parseHumanSize(parts[2]);
+  const available = parseHumanSize(parts[6] || parts[3]);
   return {
     total_gb: Math.round(total * 100) / 100,
     used_gb: Math.round(used * 100) / 100,
