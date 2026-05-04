@@ -2,6 +2,8 @@ import { getDb } from "@/lib/db";
 import { notFound } from "next/navigation";
 import { StatusBadge } from "@/components/status-badge";
 import { UptimeChart, ResponseTimeChart } from "@/components/charts";
+import { Tabs } from "@/components/tabs";
+import { StatsView } from "@/components/stats";
 import type { Service, UptimeCheck, StatsSnapshot } from "@/lib/types";
 import Link from "next/link";
 
@@ -36,6 +38,11 @@ export default async function ServiceDetailPage({
       "SELECT * FROM stats_snapshots WHERE service_id = ? ORDER BY collected_at DESC LIMIT 30"
     )
     .all(service.id) as StatsSnapshot[];
+
+  const latestStats = statsSnapshots[0];
+  const latestStatsData = latestStats?.data_json
+    ? JSON.parse(latestStats.data_json)
+    : null;
 
   return (
     <>
@@ -76,83 +83,121 @@ export default async function ServiceDetailPage({
         <p className="mb-6 text-sm text-zinc-500">{service.notes}</p>
       )}
 
-      <div className="grid gap-6 lg:grid-cols-2">
-        <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-5">
-          <h2 className="mb-4 text-lg font-semibold text-zinc-200">
-            Overview
-          </h2>
-
-          {checks.length > 0 ? (
-            <div className="space-y-6">
-              <UptimeChart checks={checks} />
-              <ResponseTimeChart checks={checks} />
-            </div>
-          ) : (
-            <p className="text-sm text-zinc-500">
-              Noch keine Uptime-Daten vorhanden.
-            </p>
-          )}
-
-          <div className="mt-4 space-y-2 text-sm">
-            {latestCheck && (
-              <>
-                <div className="flex justify-between text-zinc-500">
-                  <span>Letzter Check</span>
-                  <span className="text-zinc-300">
-                    {new Date(latestCheck.timestamp).toLocaleString("de-DE")}
-                  </span>
-                </div>
-                <div className="flex justify-between text-zinc-500">
-                  <span>Response Time</span>
-                  <span className="text-zinc-300">
-                    {latestCheck.response_ms ?? "--"}ms
-                  </span>
-                </div>
-                {latestCheck.version && (
-                  <div className="flex justify-between text-zinc-500">
-                    <span>Version</span>
-                    <span className="text-zinc-300">
-                      {latestCheck.version}
-                    </span>
-                  </div>
-                )}
-              </>
-            )}
-          </div>
-        </div>
-
-        <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-5">
-          <h2 className="mb-4 text-lg font-semibold text-zinc-200">
-            Stats
-          </h2>
-
-          {statsSnapshots.length === 0 ? (
-            <p className="text-sm text-zinc-500">
-              Keine Stats-Daten vorhanden.
-            </p>
-          ) : (
-            <div className="space-y-3">
-              {statsSnapshots.slice(0, 5).map((snap) => (
-                <div key={snap.id} className="rounded bg-zinc-800/50 p-3">
-                  <p className="mb-1 text-xs text-zinc-500">
-                    {new Date(snap.collected_at).toLocaleString("de-DE")}
-                    {!snap.endpoint_available && (
-                      <span className="ml-2 text-amber-500">
-                        Endpoint nicht erreichbar
-                      </span>
-                    )}
-                  </p>
-                  {snap.data_json && (
-                    <pre className="overflow-x-auto text-xs text-zinc-400">
-                      {JSON.stringify(JSON.parse(snap.data_json), null, 2)}
-                    </pre>
+      <Tabs
+        tabs={[
+          {
+            id: "overview",
+            label: "Overview",
+            content: (
+              <div className="space-y-6">
+                <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-5">
+                  {checks.length > 0 ? (
+                    <div className="space-y-6">
+                      <UptimeChart checks={checks} />
+                      <ResponseTimeChart checks={checks} />
+                    </div>
+                  ) : (
+                    <p className="text-sm text-zinc-500">
+                      Noch keine Uptime-Daten vorhanden.
+                    </p>
                   )}
+
+                  <div className="mt-4 space-y-2 text-sm">
+                    {latestCheck && (
+                      <>
+                        <div className="flex justify-between text-zinc-500">
+                          <span>Letzter Check</span>
+                          <span className="text-zinc-300">
+                            {new Date(latestCheck.timestamp).toLocaleString("de-DE")}
+                          </span>
+                        </div>
+                        <div className="flex justify-between text-zinc-500">
+                          <span>Response Time</span>
+                          <span className="text-zinc-300">
+                            {latestCheck.response_ms ?? "--"}ms
+                          </span>
+                        </div>
+                        {latestCheck.version && (
+                          <div className="flex justify-between text-zinc-500">
+                            <span>Version</span>
+                            <span className="text-zinc-300">
+                              {latestCheck.version}
+                            </span>
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </div>
                 </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
+              </div>
+            ),
+          },
+          {
+            id: "stats",
+            label: "Stats",
+            content: (
+              <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-5">
+                {latestStatsData ? (
+                  <div className="space-y-6">
+                    <div>
+                      <p className="mb-4 text-xs text-zinc-500">
+                        Letzte Erhebung:{" "}
+                        {new Date(
+                          latestStats!.collected_at
+                        ).toLocaleString("de-DE")}
+                        {!latestStats!.endpoint_available && (
+                          <span className="ml-2 text-amber-500">
+                            Endpoint nicht erreichbar
+                          </span>
+                        )}
+                      </p>
+                      <StatsView slug={service.slug} data={latestStatsData} />
+                    </div>
+
+                    {statsSnapshots.length > 1 && (
+                      <div>
+                        <h3 className="mb-3 text-sm font-medium text-zinc-400">
+                          Historie
+                        </h3>
+                        <div className="space-y-2">
+                          {statsSnapshots.slice(1, 10).map((snap) => (
+                            <div
+                              key={snap.id}
+                              className="flex items-center justify-between rounded bg-zinc-800/50 px-3 py-2 text-xs"
+                            >
+                              <span className="text-zinc-500">
+                                {new Date(snap.collected_at).toLocaleString("de-DE")}
+                              </span>
+                              {!snap.endpoint_available ? (
+                                <span className="text-amber-500">
+                                  Nicht erreichbar
+                                </span>
+                              ) : (
+                                <span className="text-zinc-400">
+                                  {snap.data_json
+                                    ? Object.keys(JSON.parse(snap.data_json))
+                                        .filter((k) => k !== "timestamp")
+                                        .length
+                                    : 0}{" "}
+                                  Metriken
+                                </span>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <p className="text-sm text-zinc-500">
+                    Keine Stats-Daten vorhanden.
+                  </p>
+                )}
+              </div>
+            ),
+          },
+        ]}
+      />
     </>
   );
 }
