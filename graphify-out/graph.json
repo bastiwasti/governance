@@ -4,13 +4,13 @@
   "graph": {},
   "nodes": [
     {
-      "label": "postcss.config.mjs",
+      "label": "eslint.config.mjs",
       "file_type": "code",
-      "source_file": "postcss.config.mjs",
+      "source_file": "eslint.config.mjs",
       "source_location": "L1",
-      "id": "postcss_config_mjs",
+      "id": "eslint_config_mjs",
       "community": 13,
-      "norm_label": "postcss.config.mjs"
+      "norm_label": "eslint.config.mjs"
     },
     {
       "label": "next.config.ts",
@@ -22,13 +22,13 @@
       "norm_label": "next.config.ts"
     },
     {
-      "label": "eslint.config.mjs",
+      "label": "postcss.config.mjs",
       "file_type": "code",
-      "source_file": "eslint.config.mjs",
+      "source_file": "postcss.config.mjs",
       "source_location": "L1",
-      "id": "eslint_config_mjs",
+      "id": "postcss_config_mjs",
       "community": 15,
-      "norm_label": "eslint.config.mjs"
+      "norm_label": "postcss.config.mjs"
     },
     {
       "label": "instrumentation.ts",
@@ -49,94 +49,427 @@
       "norm_label": "register()"
     },
     {
-      "label": "ssh-collector.ts",
+      "label": "navbar.tsx",
       "file_type": "code",
-      "source_file": "src/lib/ssh-collector.ts",
+      "source_file": "src/components/navbar.tsx",
       "source_location": "L1",
-      "id": "src_lib_ssh_collector_ts",
-      "community": 1,
-      "norm_label": "ssh-collector.ts"
+      "id": "src_components_navbar_tsx",
+      "community": 16,
+      "norm_label": "navbar.tsx"
     },
     {
-      "label": "execCommand()",
+      "label": "tabs.tsx",
       "file_type": "code",
-      "source_file": "src/lib/ssh-collector.ts",
+      "source_file": "src/components/tabs.tsx",
+      "source_location": "L1",
+      "id": "src_components_tabs_tsx",
+      "community": 1,
+      "norm_label": "tabs.tsx"
+    },
+    {
+      "label": "Tabs()",
+      "file_type": "code",
+      "source_file": "src/components/tabs.tsx",
+      "source_location": "L5",
+      "id": "components_tabs_tabs",
+      "community": 1,
+      "norm_label": "tabs()"
+    },
+    {
+      "label": "charts.tsx",
+      "file_type": "code",
+      "source_file": "src/components/charts.tsx",
+      "source_location": "L1",
+      "id": "src_components_charts_tsx",
+      "community": 8,
+      "norm_label": "charts.tsx"
+    },
+    {
+      "label": "formatTime()",
+      "file_type": "code",
+      "source_file": "src/components/charts.tsx",
+      "source_location": "L15",
+      "id": "components_charts_formattime",
+      "community": 8,
+      "norm_label": "formattime()"
+    },
+    {
+      "label": "statusToValue()",
+      "file_type": "code",
+      "source_file": "src/components/charts.tsx",
+      "source_location": "L24",
+      "id": "components_charts_statustovalue",
+      "community": 8,
+      "norm_label": "statustovalue()"
+    },
+    {
+      "label": "registry-form.tsx",
+      "file_type": "code",
+      "source_file": "src/components/registry-form.tsx",
+      "source_location": "L1",
+      "id": "src_components_registry_form_tsx",
+      "community": 11,
+      "norm_label": "registry-form.tsx"
+    },
+    {
+      "label": "handleSubmit()",
+      "file_type": "code",
+      "source_file": "src/components/registry-form.tsx",
+      "source_location": "L48",
+      "id": "components_registry_form_handlesubmit",
+      "community": 11,
+      "norm_label": "handlesubmit()"
+    },
+    {
+      "label": "status-badge.tsx",
+      "file_type": "code",
+      "source_file": "src/components/status-badge.tsx",
+      "source_location": "L1",
+      "id": "src_components_status_badge_tsx",
+      "community": 1,
+      "norm_label": "status-badge.tsx"
+    },
+    {
+      "label": "StatusBadge()",
+      "file_type": "code",
+      "source_file": "src/components/status-badge.tsx",
+      "source_location": "L10",
+      "id": "components_status_badge_statusbadge",
+      "community": 1,
+      "norm_label": "statusbadge()"
+    },
+    {
+      "label": "registry-client.tsx",
+      "file_type": "code",
+      "source_file": "src/components/registry-client.tsx",
+      "source_location": "L1",
+      "id": "src_components_registry_client_tsx",
+      "community": 9,
+      "norm_label": "registry-client.tsx"
+    },
+    {
+      "label": "load()",
+      "file_type": "code",
+      "source_file": "src/components/registry-client.tsx",
+      "source_location": "L16",
+      "id": "components_registry_client_load",
+      "community": 9,
+      "norm_label": "load()"
+    },
+    {
+      "label": "handleDelete()",
+      "file_type": "code",
+      "source_file": "src/components/registry-client.tsx",
+      "source_location": "L22",
+      "id": "components_registry_client_handledelete",
+      "community": 9,
+      "norm_label": "handledelete()"
+    },
+    {
+      "label": "service-card.tsx",
+      "file_type": "code",
+      "source_file": "src/components/service-card.tsx",
+      "source_location": "L1",
+      "id": "src_components_service_card_tsx",
+      "community": 1,
+      "norm_label": "service-card.tsx"
+    },
+    {
+      "label": "formatUptime()",
+      "file_type": "code",
+      "source_file": "src/components/service-card.tsx",
       "source_location": "L6",
-      "id": "lib_ssh_collector_execcommand",
+      "id": "components_service_card_formatuptime",
       "community": 1,
-      "norm_label": "execcommand()"
+      "norm_label": "formatuptime()"
     },
     {
-      "label": "parseHumanSize()",
+      "label": "timeAgo()",
       "file_type": "code",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L50",
-      "id": "lib_ssh_collector_parsehumansize",
+      "source_file": "src/components/service-card.tsx",
+      "source_location": "L11",
+      "id": "components_service_card_timeago",
       "community": 1,
-      "norm_label": "parsehumansize()"
+      "norm_label": "timeago()"
     },
     {
-      "label": "parseDf()",
+      "label": "TypeIcon()",
       "file_type": "code",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L58",
-      "id": "lib_ssh_collector_parsedf",
+      "source_file": "src/components/service-card.tsx",
+      "source_location": "L23",
+      "id": "components_service_card_typeicon",
       "community": 1,
-      "norm_label": "parsedf()"
+      "norm_label": "typeicon()"
     },
     {
-      "label": "parseFree()",
+      "label": "webhook-manager.tsx",
       "file_type": "code",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L75",
-      "id": "lib_ssh_collector_parsefree",
-      "community": 1,
-      "norm_label": "parsefree()"
+      "source_file": "src/components/webhook-manager.tsx",
+      "source_location": "L1",
+      "id": "src_components_webhook_manager_tsx",
+      "community": 6,
+      "norm_label": "webhook-manager.tsx"
     },
     {
-      "label": "parseTop()",
+      "label": "addWebhook()",
       "file_type": "code",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L91",
-      "id": "lib_ssh_collector_parsetop",
-      "community": 1,
-      "norm_label": "parsetop()"
+      "source_file": "src/components/webhook-manager.tsx",
+      "source_location": "L15",
+      "id": "components_webhook_manager_addwebhook",
+      "community": 6,
+      "norm_label": "addwebhook()"
     },
     {
-      "label": "parseDockerPs()",
+      "label": "deleteWebhook()",
       "file_type": "code",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L109",
-      "id": "lib_ssh_collector_parsedockerps",
-      "community": 1,
-      "norm_label": "parsedockerps()"
+      "source_file": "src/components/webhook-manager.tsx",
+      "source_location": "L38",
+      "id": "components_webhook_manager_deletewebhook",
+      "community": 6,
+      "norm_label": "deletewebhook()"
     },
     {
-      "label": "insertMetric()",
+      "label": "toggleWebhook()",
       "file_type": "code",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L120",
-      "id": "lib_ssh_collector_insertmetric",
-      "community": 1,
-      "norm_label": "insertmetric()"
+      "source_file": "src/components/webhook-manager.tsx",
+      "source_location": "L43",
+      "id": "components_webhook_manager_togglewebhook",
+      "community": 6,
+      "norm_label": "togglewebhook()"
     },
     {
-      "label": "collectHost()",
+      "label": "testWebhook()",
       "file_type": "code",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L132",
-      "id": "lib_ssh_collector_collecthost",
-      "community": 1,
-      "norm_label": "collecthost()"
+      "source_file": "src/components/webhook-manager.tsx",
+      "source_location": "L54",
+      "id": "components_webhook_manager_testwebhook",
+      "community": 6,
+      "norm_label": "testwebhook()"
     },
     {
-      "label": "collectAllInfra()",
+      "label": "detectProvider()",
       "file_type": "code",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L178",
-      "id": "lib_ssh_collector_collectallinfra",
-      "community": 4,
-      "norm_label": "collectallinfra()"
+      "source_file": "src/components/webhook-manager.tsx",
+      "source_location": "L72",
+      "id": "components_webhook_manager_detectprovider",
+      "community": 6,
+      "norm_label": "detectprovider()"
+    },
+    {
+      "label": "incident-list.tsx",
+      "file_type": "code",
+      "source_file": "src/components/incident-list.tsx",
+      "source_location": "L1",
+      "id": "src_components_incident_list_tsx",
+      "community": 1,
+      "norm_label": "incident-list.tsx"
+    },
+    {
+      "label": "formatDuration()",
+      "file_type": "code",
+      "source_file": "src/components/incident-list.tsx",
+      "source_location": "L3",
+      "id": "components_incident_list_formatduration",
+      "community": 1,
+      "norm_label": "formatduration()"
+    },
+    {
+      "label": "IncidentList()",
+      "file_type": "code",
+      "source_file": "src/components/incident-list.tsx",
+      "source_location": "L14",
+      "id": "components_incident_list_incidentlist",
+      "community": 1,
+      "norm_label": "incidentlist()"
+    },
+    {
+      "label": "webscraper.tsx",
+      "file_type": "code",
+      "source_file": "src/components/stats/webscraper.tsx",
+      "source_location": "L1",
+      "id": "src_components_stats_webscraper_tsx",
+      "community": 17,
+      "norm_label": "webscraper.tsx"
+    },
+    {
+      "label": "index.tsx",
+      "file_type": "code",
+      "source_file": "src/components/stats/index.tsx",
+      "source_location": "L1",
+      "id": "src_components_stats_index_tsx",
+      "community": 5,
+      "norm_label": "index.tsx"
+    },
+    {
+      "label": "StatsView()",
+      "file_type": "code",
+      "source_file": "src/components/stats/index.tsx",
+      "source_location": "L7",
+      "id": "stats_index_statsview",
+      "community": 5,
+      "norm_label": "statsview()"
+    },
+    {
+      "label": "karten.tsx",
+      "file_type": "code",
+      "source_file": "src/components/stats/karten.tsx",
+      "source_location": "L1",
+      "id": "src_components_stats_karten_tsx",
+      "community": 18,
+      "norm_label": "karten.tsx"
+    },
+    {
+      "label": "raw-json.tsx",
+      "file_type": "code",
+      "source_file": "src/components/stats/raw-json.tsx",
+      "source_location": "L1",
+      "id": "src_components_stats_raw_json_tsx",
+      "community": 5,
+      "norm_label": "raw-json.tsx"
+    },
+    {
+      "label": "RawJsonStats()",
+      "file_type": "code",
+      "source_file": "src/components/stats/raw-json.tsx",
+      "source_location": "L1",
+      "id": "stats_raw_json_rawjsonstats",
+      "community": 5,
+      "norm_label": "rawjsonstats()"
+    },
+    {
+      "label": "sofia.tsx",
+      "file_type": "code",
+      "source_file": "src/components/stats/sofia.tsx",
+      "source_location": "L1",
+      "id": "src_components_stats_sofia_tsx",
+      "community": 5,
+      "norm_label": "sofia.tsx"
+    },
+    {
+      "label": "SofiaStats()",
+      "file_type": "code",
+      "source_file": "src/components/stats/sofia.tsx",
+      "source_location": "L9",
+      "id": "stats_sofia_sofiastats",
+      "community": 5,
+      "norm_label": "sofiastats()"
+    },
+    {
+      "label": "StatCard()",
+      "file_type": "code",
+      "source_file": "src/components/stats/sofia.tsx",
+      "source_location": "L25",
+      "id": "stats_sofia_statcard",
+      "community": 5,
+      "norm_label": "statcard()"
+    },
+    {
+      "label": "schafkopf-tracker.tsx",
+      "file_type": "code",
+      "source_file": "src/components/stats/schafkopf-tracker.tsx",
+      "source_location": "L1",
+      "id": "src_components_stats_schafkopf_tracker_tsx",
+      "community": 19,
+      "norm_label": "schafkopf-tracker.tsx"
+    },
+    {
+      "label": "metric-charts.tsx",
+      "file_type": "code",
+      "source_file": "src/components/infra/metric-charts.tsx",
+      "source_location": "L1",
+      "id": "src_components_infra_metric_charts_tsx",
+      "community": 10,
+      "norm_label": "metric-charts.tsx"
+    },
+    {
+      "label": "formatTime()",
+      "file_type": "code",
+      "source_file": "src/components/infra/metric-charts.tsx",
+      "source_location": "L14",
+      "id": "infra_metric_charts_formattime",
+      "community": 10,
+      "norm_label": "formattime()"
+    },
+    {
+      "label": "formatDate()",
+      "file_type": "code",
+      "source_file": "src/components/infra/metric-charts.tsx",
+      "source_location": "L21",
+      "id": "infra_metric_charts_formatdate",
+      "community": 10,
+      "norm_label": "formatdate()"
+    },
+    {
+      "label": "container-table.tsx",
+      "file_type": "code",
+      "source_file": "src/components/infra/container-table.tsx",
+      "source_location": "L1",
+      "id": "src_components_infra_container_table_tsx",
+      "community": 20,
+      "norm_label": "container-table.tsx"
+    },
+    {
+      "label": "host-card.tsx",
+      "file_type": "code",
+      "source_file": "src/components/infra/host-card.tsx",
+      "source_location": "L1",
+      "id": "src_components_infra_host_card_tsx",
+      "community": 21,
+      "norm_label": "host-card.tsx"
+    },
+    {
+      "label": "retention.ts",
+      "file_type": "code",
+      "source_file": "src/lib/retention.ts",
+      "source_location": "L1",
+      "id": "src_lib_retention_ts",
+      "community": 0,
+      "norm_label": "retention.ts"
+    },
+    {
+      "label": "runRetention()",
+      "file_type": "code",
+      "source_file": "src/lib/retention.ts",
+      "source_location": "L11",
+      "id": "lib_retention_runretention",
+      "community": 0,
+      "norm_label": "runretention()"
+    },
+    {
+      "label": "poller.ts",
+      "file_type": "code",
+      "source_file": "src/lib/poller.ts",
+      "source_location": "L1",
+      "id": "src_lib_poller_ts",
+      "community": 7,
+      "norm_label": "poller.ts"
+    },
+    {
+      "label": "pollService()",
+      "file_type": "code",
+      "source_file": "src/lib/poller.ts",
+      "source_location": "L4",
+      "id": "lib_poller_pollservice",
+      "community": 7,
+      "norm_label": "pollservice()"
+    },
+    {
+      "label": "detectIncident()",
+      "file_type": "code",
+      "source_file": "src/lib/poller.ts",
+      "source_location": "L46",
+      "id": "lib_poller_detectincident",
+      "community": 7,
+      "norm_label": "detectincident()"
+    },
+    {
+      "label": "pollAllServices()",
+      "file_type": "code",
+      "source_file": "src/lib/poller.ts",
+      "source_location": "L98",
+      "id": "lib_poller_pollallservices",
+      "community": 7,
+      "norm_label": "pollallservices()"
     },
     {
       "label": "notifier.ts",
@@ -211,51 +544,6 @@
       "norm_label": "sendnotifications()"
     },
     {
-      "label": "poller.ts",
-      "file_type": "code",
-      "source_file": "src/lib/poller.ts",
-      "source_location": "L1",
-      "id": "src_lib_poller_ts",
-      "community": 6,
-      "norm_label": "poller.ts"
-    },
-    {
-      "label": "pollService()",
-      "file_type": "code",
-      "source_file": "src/lib/poller.ts",
-      "source_location": "L4",
-      "id": "lib_poller_pollservice",
-      "community": 6,
-      "norm_label": "pollservice()"
-    },
-    {
-      "label": "detectIncident()",
-      "file_type": "code",
-      "source_file": "src/lib/poller.ts",
-      "source_location": "L46",
-      "id": "lib_poller_detectincident",
-      "community": 6,
-      "norm_label": "detectincident()"
-    },
-    {
-      "label": "pollAllServices()",
-      "file_type": "code",
-      "source_file": "src/lib/poller.ts",
-      "source_location": "L98",
-      "id": "lib_poller_pollallservices",
-      "community": 6,
-      "norm_label": "pollallservices()"
-    },
-    {
-      "label": "types.ts",
-      "file_type": "code",
-      "source_file": "src/lib/types.ts",
-      "source_location": "L1",
-      "id": "src_lib_types_ts",
-      "community": 16,
-      "norm_label": "types.ts"
-    },
-    {
       "label": "stats-collector.ts",
       "file_type": "code",
       "source_file": "src/lib/stats-collector.ts",
@@ -283,49 +571,13 @@
       "norm_label": "collectallstats()"
     },
     {
-      "label": "retention.ts",
+      "label": "types.ts",
       "file_type": "code",
-      "source_file": "src/lib/retention.ts",
+      "source_file": "src/lib/types.ts",
       "source_location": "L1",
-      "id": "src_lib_retention_ts",
-      "community": 0,
-      "norm_label": "retention.ts"
-    },
-    {
-      "label": "runRetention()",
-      "file_type": "code",
-      "source_file": "src/lib/retention.ts",
-      "source_location": "L11",
-      "id": "lib_retention_runretention",
-      "community": 0,
-      "norm_label": "runretention()"
-    },
-    {
-      "label": "ssh-config.ts",
-      "file_type": "code",
-      "source_file": "src/lib/ssh-config.ts",
-      "source_location": "L1",
-      "id": "src_lib_ssh_config_ts",
-      "community": 1,
-      "norm_label": "ssh-config.ts"
-    },
-    {
-      "label": "getKeyPath()",
-      "file_type": "code",
-      "source_file": "src/lib/ssh-config.ts",
-      "source_location": "L30",
-      "id": "lib_ssh_config_getkeypath",
-      "community": 1,
-      "norm_label": "getkeypath()"
-    },
-    {
-      "label": "getSSHConfig()",
-      "file_type": "code",
-      "source_file": "src/lib/ssh-config.ts",
-      "source_location": "L36",
-      "id": "lib_ssh_config_getsshconfig",
-      "community": 1,
-      "norm_label": "getsshconfig()"
+      "id": "src_lib_types_ts",
+      "community": 22,
+      "norm_label": "types.ts"
     },
     {
       "label": "db.ts",
@@ -355,22 +607,121 @@
       "norm_label": "getdb()"
     },
     {
-      "label": "layout.tsx",
+      "label": "ssh-collector.ts",
       "file_type": "code",
-      "source_file": "src/app/layout.tsx",
+      "source_file": "src/lib/ssh-collector.ts",
       "source_location": "L1",
-      "id": "src_app_layout_tsx",
-      "community": 11,
-      "norm_label": "layout.tsx"
+      "id": "src_lib_ssh_collector_ts",
+      "community": 2,
+      "norm_label": "ssh-collector.ts"
     },
     {
-      "label": "RootLayout()",
+      "label": "execCommand()",
       "file_type": "code",
-      "source_file": "src/app/layout.tsx",
-      "source_location": "L21",
-      "id": "app_layout_rootlayout",
-      "community": 11,
-      "norm_label": "rootlayout()"
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L6",
+      "id": "lib_ssh_collector_execcommand",
+      "community": 2,
+      "norm_label": "execcommand()"
+    },
+    {
+      "label": "parseHumanSize()",
+      "file_type": "code",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L50",
+      "id": "lib_ssh_collector_parsehumansize",
+      "community": 2,
+      "norm_label": "parsehumansize()"
+    },
+    {
+      "label": "parseDf()",
+      "file_type": "code",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L58",
+      "id": "lib_ssh_collector_parsedf",
+      "community": 2,
+      "norm_label": "parsedf()"
+    },
+    {
+      "label": "parseFree()",
+      "file_type": "code",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L75",
+      "id": "lib_ssh_collector_parsefree",
+      "community": 2,
+      "norm_label": "parsefree()"
+    },
+    {
+      "label": "parseTop()",
+      "file_type": "code",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L91",
+      "id": "lib_ssh_collector_parsetop",
+      "community": 2,
+      "norm_label": "parsetop()"
+    },
+    {
+      "label": "parseDockerPs()",
+      "file_type": "code",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L109",
+      "id": "lib_ssh_collector_parsedockerps",
+      "community": 2,
+      "norm_label": "parsedockerps()"
+    },
+    {
+      "label": "insertMetric()",
+      "file_type": "code",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L120",
+      "id": "lib_ssh_collector_insertmetric",
+      "community": 2,
+      "norm_label": "insertmetric()"
+    },
+    {
+      "label": "collectHost()",
+      "file_type": "code",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L132",
+      "id": "lib_ssh_collector_collecthost",
+      "community": 2,
+      "norm_label": "collecthost()"
+    },
+    {
+      "label": "collectAllInfra()",
+      "file_type": "code",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L178",
+      "id": "lib_ssh_collector_collectallinfra",
+      "community": 4,
+      "norm_label": "collectallinfra()"
+    },
+    {
+      "label": "ssh-config.ts",
+      "file_type": "code",
+      "source_file": "src/lib/ssh-config.ts",
+      "source_location": "L1",
+      "id": "src_lib_ssh_config_ts",
+      "community": 2,
+      "norm_label": "ssh-config.ts"
+    },
+    {
+      "label": "getKeyPath()",
+      "file_type": "code",
+      "source_file": "src/lib/ssh-config.ts",
+      "source_location": "L30",
+      "id": "lib_ssh_config_getkeypath",
+      "community": 2,
+      "norm_label": "getkeypath()"
+    },
+    {
+      "label": "getSSHConfig()",
+      "file_type": "code",
+      "source_file": "src/lib/ssh-config.ts",
+      "source_location": "L36",
+      "id": "lib_ssh_config_getsshconfig",
+      "community": 2,
+      "norm_label": "getsshconfig()"
     },
     {
       "label": "page.tsx",
@@ -382,13 +733,76 @@
       "norm_label": "page.tsx"
     },
     {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "src/app/layout.tsx",
+      "source_location": "L1",
+      "id": "src_app_layout_tsx",
+      "community": 12,
+      "norm_label": "layout.tsx"
+    },
+    {
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "src/app/layout.tsx",
+      "source_location": "L21",
+      "id": "app_layout_rootlayout",
+      "community": 12,
+      "norm_label": "rootlayout()"
+    },
+    {
       "label": "page.tsx",
       "file_type": "code",
-      "source_file": "src/app/infra/page.tsx",
+      "source_file": "src/app/registry/page.tsx",
       "source_location": "L1",
-      "id": "src_app_infra_page_tsx",
+      "id": "src_app_registry_page_tsx",
       "community": 0,
       "norm_label": "page.tsx"
+    },
+    {
+      "label": "RegistryPage()",
+      "file_type": "code",
+      "source_file": "src/app/registry/page.tsx",
+      "source_location": "L7",
+      "id": "registry_page_registrypage",
+      "community": 0,
+      "norm_label": "registrypage()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "src/app/api/collect-infra/route.ts",
+      "source_location": "L1",
+      "id": "src_app_api_collect_infra_route_ts",
+      "community": 4,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "src/app/api/collect-infra/route.ts",
+      "source_location": "L4",
+      "id": "collect_infra_route_post",
+      "community": 4,
+      "norm_label": "post()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "src/app/api/collect-stats/route.ts",
+      "source_location": "L1",
+      "id": "src_app_api_collect_stats_route_ts",
+      "community": 4,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "src/app/api/collect-stats/route.ts",
+      "source_location": "L4",
+      "id": "collect_stats_route_post",
+      "community": 4,
+      "norm_label": "post()"
     },
     {
       "label": "route.ts",
@@ -415,6 +829,24 @@
       "source_location": "L14",
       "id": "webhooks_route_post",
       "community": 0,
+      "norm_label": "post()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "src/app/api/webhooks/test/route.ts",
+      "source_location": "L1",
+      "id": "src_app_api_webhooks_test_route_ts",
+      "community": 3,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "src/app/api/webhooks/test/route.ts",
+      "source_location": "L6",
+      "id": "test_route_post",
+      "community": 3,
       "norm_label": "post()"
     },
     {
@@ -447,37 +879,19 @@
     {
       "label": "route.ts",
       "file_type": "code",
-      "source_file": "src/app/api/webhooks/test/route.ts",
+      "source_file": "src/app/api/poll/route.ts",
       "source_location": "L1",
-      "id": "src_app_api_webhooks_test_route_ts",
-      "community": 3,
+      "id": "src_app_api_poll_route_ts",
+      "community": 7,
       "norm_label": "route.ts"
     },
     {
       "label": "POST()",
       "file_type": "code",
-      "source_file": "src/app/api/webhooks/test/route.ts",
-      "source_location": "L6",
-      "id": "test_route_post",
-      "community": 3,
-      "norm_label": "post()"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "src/app/api/collect-infra/route.ts",
-      "source_location": "L1",
-      "id": "src_app_api_collect_infra_route_ts",
-      "community": 4,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "POST()",
-      "file_type": "code",
-      "source_file": "src/app/api/collect-infra/route.ts",
+      "source_file": "src/app/api/poll/route.ts",
       "source_location": "L4",
-      "id": "collect_infra_route_post",
-      "community": 4,
+      "id": "poll_route_post",
+      "community": 7,
       "norm_label": "post()"
     },
     {
@@ -526,67 +940,13 @@
       "norm_label": "get()"
     },
     {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "src/app/api/collect-stats/route.ts",
-      "source_location": "L1",
-      "id": "src_app_api_collect_stats_route_ts",
-      "community": 4,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "POST()",
-      "file_type": "code",
-      "source_file": "src/app/api/collect-stats/route.ts",
-      "source_location": "L4",
-      "id": "collect_stats_route_post",
-      "community": 4,
-      "norm_label": "post()"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "src/app/api/poll/route.ts",
-      "source_location": "L1",
-      "id": "src_app_api_poll_route_ts",
-      "community": 6,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "POST()",
-      "file_type": "code",
-      "source_file": "src/app/api/poll/route.ts",
-      "source_location": "L4",
-      "id": "poll_route_post",
-      "community": 6,
-      "norm_label": "post()"
-    },
-    {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "src/app/services/[slug]/page.tsx",
       "source_location": "L1",
       "id": "src_app_services_slug_page_tsx",
-      "community": 2,
+      "community": 1,
       "norm_label": "page.tsx"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "src/app/registry/page.tsx",
-      "source_location": "L1",
-      "id": "src_app_registry_page_tsx",
-      "community": 0,
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "RegistryPage()",
-      "file_type": "code",
-      "source_file": "src/app/registry/page.tsx",
-      "source_location": "L7",
-      "id": "registry_page_registrypage",
-      "community": 0,
-      "norm_label": "registrypage()"
     },
     {
       "label": "page.tsx",
@@ -607,373 +967,13 @@
       "norm_label": "settingspage()"
     },
     {
-      "label": "service-card.tsx",
+      "label": "page.tsx",
       "file_type": "code",
-      "source_file": "src/components/service-card.tsx",
+      "source_file": "src/app/infra/page.tsx",
       "source_location": "L1",
-      "id": "src_components_service_card_tsx",
-      "community": 2,
-      "norm_label": "service-card.tsx"
-    },
-    {
-      "label": "formatUptime()",
-      "file_type": "code",
-      "source_file": "src/components/service-card.tsx",
-      "source_location": "L6",
-      "id": "components_service_card_formatuptime",
-      "community": 2,
-      "norm_label": "formatuptime()"
-    },
-    {
-      "label": "timeAgo()",
-      "file_type": "code",
-      "source_file": "src/components/service-card.tsx",
-      "source_location": "L11",
-      "id": "components_service_card_timeago",
-      "community": 2,
-      "norm_label": "timeago()"
-    },
-    {
-      "label": "TypeIcon()",
-      "file_type": "code",
-      "source_file": "src/components/service-card.tsx",
-      "source_location": "L23",
-      "id": "components_service_card_typeicon",
-      "community": 2,
-      "norm_label": "typeicon()"
-    },
-    {
-      "label": "tabs.tsx",
-      "file_type": "code",
-      "source_file": "src/components/tabs.tsx",
-      "source_location": "L1",
-      "id": "src_components_tabs_tsx",
-      "community": 2,
-      "norm_label": "tabs.tsx"
-    },
-    {
-      "label": "Tabs()",
-      "file_type": "code",
-      "source_file": "src/components/tabs.tsx",
-      "source_location": "L5",
-      "id": "components_tabs_tabs",
-      "community": 2,
-      "norm_label": "tabs()"
-    },
-    {
-      "label": "charts.tsx",
-      "file_type": "code",
-      "source_file": "src/components/charts.tsx",
-      "source_location": "L1",
-      "id": "src_components_charts_tsx",
-      "community": 8,
-      "norm_label": "charts.tsx"
-    },
-    {
-      "label": "formatTime()",
-      "file_type": "code",
-      "source_file": "src/components/charts.tsx",
-      "source_location": "L15",
-      "id": "components_charts_formattime",
-      "community": 8,
-      "norm_label": "formattime()"
-    },
-    {
-      "label": "statusToValue()",
-      "file_type": "code",
-      "source_file": "src/components/charts.tsx",
-      "source_location": "L24",
-      "id": "components_charts_statustovalue",
-      "community": 8,
-      "norm_label": "statustovalue()"
-    },
-    {
-      "label": "webhook-manager.tsx",
-      "file_type": "code",
-      "source_file": "src/components/webhook-manager.tsx",
-      "source_location": "L1",
-      "id": "src_components_webhook_manager_tsx",
-      "community": 7,
-      "norm_label": "webhook-manager.tsx"
-    },
-    {
-      "label": "addWebhook()",
-      "file_type": "code",
-      "source_file": "src/components/webhook-manager.tsx",
-      "source_location": "L15",
-      "id": "components_webhook_manager_addwebhook",
-      "community": 7,
-      "norm_label": "addwebhook()"
-    },
-    {
-      "label": "deleteWebhook()",
-      "file_type": "code",
-      "source_file": "src/components/webhook-manager.tsx",
-      "source_location": "L38",
-      "id": "components_webhook_manager_deletewebhook",
-      "community": 7,
-      "norm_label": "deletewebhook()"
-    },
-    {
-      "label": "toggleWebhook()",
-      "file_type": "code",
-      "source_file": "src/components/webhook-manager.tsx",
-      "source_location": "L43",
-      "id": "components_webhook_manager_togglewebhook",
-      "community": 7,
-      "norm_label": "togglewebhook()"
-    },
-    {
-      "label": "testWebhook()",
-      "file_type": "code",
-      "source_file": "src/components/webhook-manager.tsx",
-      "source_location": "L54",
-      "id": "components_webhook_manager_testwebhook",
-      "community": 7,
-      "norm_label": "testwebhook()"
-    },
-    {
-      "label": "detectProvider()",
-      "file_type": "code",
-      "source_file": "src/components/webhook-manager.tsx",
-      "source_location": "L72",
-      "id": "components_webhook_manager_detectprovider",
-      "community": 7,
-      "norm_label": "detectprovider()"
-    },
-    {
-      "label": "incident-list.tsx",
-      "file_type": "code",
-      "source_file": "src/components/incident-list.tsx",
-      "source_location": "L1",
-      "id": "src_components_incident_list_tsx",
-      "community": 2,
-      "norm_label": "incident-list.tsx"
-    },
-    {
-      "label": "formatDuration()",
-      "file_type": "code",
-      "source_file": "src/components/incident-list.tsx",
-      "source_location": "L3",
-      "id": "components_incident_list_formatduration",
-      "community": 2,
-      "norm_label": "formatduration()"
-    },
-    {
-      "label": "IncidentList()",
-      "file_type": "code",
-      "source_file": "src/components/incident-list.tsx",
-      "source_location": "L14",
-      "id": "components_incident_list_incidentlist",
-      "community": 2,
-      "norm_label": "incidentlist()"
-    },
-    {
-      "label": "registry-form.tsx",
-      "file_type": "code",
-      "source_file": "src/components/registry-form.tsx",
-      "source_location": "L1",
-      "id": "src_components_registry_form_tsx",
-      "community": 12,
-      "norm_label": "registry-form.tsx"
-    },
-    {
-      "label": "handleSubmit()",
-      "file_type": "code",
-      "source_file": "src/components/registry-form.tsx",
-      "source_location": "L48",
-      "id": "components_registry_form_handlesubmit",
-      "community": 12,
-      "norm_label": "handlesubmit()"
-    },
-    {
-      "label": "navbar.tsx",
-      "file_type": "code",
-      "source_file": "src/components/navbar.tsx",
-      "source_location": "L1",
-      "id": "src_components_navbar_tsx",
-      "community": 17,
-      "norm_label": "navbar.tsx"
-    },
-    {
-      "label": "status-badge.tsx",
-      "file_type": "code",
-      "source_file": "src/components/status-badge.tsx",
-      "source_location": "L1",
-      "id": "src_components_status_badge_tsx",
-      "community": 2,
-      "norm_label": "status-badge.tsx"
-    },
-    {
-      "label": "StatusBadge()",
-      "file_type": "code",
-      "source_file": "src/components/status-badge.tsx",
-      "source_location": "L10",
-      "id": "components_status_badge_statusbadge",
-      "community": 2,
-      "norm_label": "statusbadge()"
-    },
-    {
-      "label": "registry-client.tsx",
-      "file_type": "code",
-      "source_file": "src/components/registry-client.tsx",
-      "source_location": "L1",
-      "id": "src_components_registry_client_tsx",
-      "community": 9,
-      "norm_label": "registry-client.tsx"
-    },
-    {
-      "label": "load()",
-      "file_type": "code",
-      "source_file": "src/components/registry-client.tsx",
-      "source_location": "L16",
-      "id": "components_registry_client_load",
-      "community": 9,
-      "norm_label": "load()"
-    },
-    {
-      "label": "handleDelete()",
-      "file_type": "code",
-      "source_file": "src/components/registry-client.tsx",
-      "source_location": "L22",
-      "id": "components_registry_client_handledelete",
-      "community": 9,
-      "norm_label": "handledelete()"
-    },
-    {
-      "label": "container-table.tsx",
-      "file_type": "code",
-      "source_file": "src/components/infra/container-table.tsx",
-      "source_location": "L1",
-      "id": "src_components_infra_container_table_tsx",
-      "community": 18,
-      "norm_label": "container-table.tsx"
-    },
-    {
-      "label": "metric-charts.tsx",
-      "file_type": "code",
-      "source_file": "src/components/infra/metric-charts.tsx",
-      "source_location": "L1",
-      "id": "src_components_infra_metric_charts_tsx",
-      "community": 10,
-      "norm_label": "metric-charts.tsx"
-    },
-    {
-      "label": "formatTime()",
-      "file_type": "code",
-      "source_file": "src/components/infra/metric-charts.tsx",
-      "source_location": "L14",
-      "id": "infra_metric_charts_formattime",
-      "community": 10,
-      "norm_label": "formattime()"
-    },
-    {
-      "label": "formatDate()",
-      "file_type": "code",
-      "source_file": "src/components/infra/metric-charts.tsx",
-      "source_location": "L21",
-      "id": "infra_metric_charts_formatdate",
-      "community": 10,
-      "norm_label": "formatdate()"
-    },
-    {
-      "label": "host-card.tsx",
-      "file_type": "code",
-      "source_file": "src/components/infra/host-card.tsx",
-      "source_location": "L1",
-      "id": "src_components_infra_host_card_tsx",
-      "community": 19,
-      "norm_label": "host-card.tsx"
-    },
-    {
-      "label": "webscraper.tsx",
-      "file_type": "code",
-      "source_file": "src/components/stats/webscraper.tsx",
-      "source_location": "L1",
-      "id": "src_components_stats_webscraper_tsx",
-      "community": 20,
-      "norm_label": "webscraper.tsx"
-    },
-    {
-      "label": "sofia.tsx",
-      "file_type": "code",
-      "source_file": "src/components/stats/sofia.tsx",
-      "source_location": "L1",
-      "id": "src_components_stats_sofia_tsx",
-      "community": 5,
-      "norm_label": "sofia.tsx"
-    },
-    {
-      "label": "SofiaStats()",
-      "file_type": "code",
-      "source_file": "src/components/stats/sofia.tsx",
-      "source_location": "L9",
-      "id": "stats_sofia_sofiastats",
-      "community": 5,
-      "norm_label": "sofiastats()"
-    },
-    {
-      "label": "StatCard()",
-      "file_type": "code",
-      "source_file": "src/components/stats/sofia.tsx",
-      "source_location": "L25",
-      "id": "stats_sofia_statcard",
-      "community": 5,
-      "norm_label": "statcard()"
-    },
-    {
-      "label": "schafkopf-tracker.tsx",
-      "file_type": "code",
-      "source_file": "src/components/stats/schafkopf-tracker.tsx",
-      "source_location": "L1",
-      "id": "src_components_stats_schafkopf_tracker_tsx",
-      "community": 21,
-      "norm_label": "schafkopf-tracker.tsx"
-    },
-    {
-      "label": "index.tsx",
-      "file_type": "code",
-      "source_file": "src/components/stats/index.tsx",
-      "source_location": "L1",
-      "id": "src_components_stats_index_tsx",
-      "community": 5,
-      "norm_label": "index.tsx"
-    },
-    {
-      "label": "StatsView()",
-      "file_type": "code",
-      "source_file": "src/components/stats/index.tsx",
-      "source_location": "L7",
-      "id": "stats_index_statsview",
-      "community": 5,
-      "norm_label": "statsview()"
-    },
-    {
-      "label": "karten.tsx",
-      "file_type": "code",
-      "source_file": "src/components/stats/karten.tsx",
-      "source_location": "L1",
-      "id": "src_components_stats_karten_tsx",
-      "community": 22,
-      "norm_label": "karten.tsx"
-    },
-    {
-      "label": "raw-json.tsx",
-      "file_type": "code",
-      "source_file": "src/components/stats/raw-json.tsx",
-      "source_location": "L1",
-      "id": "src_components_stats_raw_json_tsx",
-      "community": 5,
-      "norm_label": "raw-json.tsx"
-    },
-    {
-      "label": "RawJsonStats()",
-      "file_type": "code",
-      "source_file": "src/components/stats/raw-json.tsx",
-      "source_location": "L1",
-      "id": "stats_raw_json_rawjsonstats",
-      "community": 5,
-      "norm_label": "rawjsonstats()"
+      "id": "src_app_infra_page_tsx",
+      "community": 0,
+      "norm_label": "page.tsx"
     }
   ],
   "links": [
@@ -1021,137 +1021,331 @@
       "target": "lib_ssh_collector_collectallinfra"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_components_tabs_tsx",
+      "target": "components_tabs_tabs",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-collector.ts",
+      "source_file": "src/app/services/[slug]/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_app_services_slug_page_tsx",
+      "target": "components_tabs_tabs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/charts.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_components_charts_tsx",
+      "target": "components_charts_formattime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/charts.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "src_components_charts_tsx",
+      "target": "components_charts_statustovalue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/registry-form.tsx",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "src_components_registry_form_tsx",
+      "target": "components_registry_form_handlesubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/status-badge.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_components_status_badge_tsx",
+      "target": "components_status_badge_statusbadge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/service-card.tsx",
       "source_location": "L2",
       "weight": 1.0,
-      "source": "src_lib_ssh_collector_ts",
+      "source": "src_components_service_card_tsx",
+      "target": "components_status_badge_statusbadge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/services/[slug]/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_app_services_slug_page_tsx",
+      "target": "components_status_badge_statusbadge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/registry-client.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_components_registry_client_tsx",
+      "target": "components_registry_client_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/registry-client.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "src_components_registry_client_tsx",
+      "target": "components_registry_client_handledelete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/registry-client.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "components_registry_client_handledelete",
+      "target": "components_registry_client_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/service-card.tsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "src_components_service_card_tsx",
+      "target": "components_service_card_formatuptime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/service-card.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_components_service_card_tsx",
+      "target": "components_service_card_timeago",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/service-card.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "src_components_service_card_tsx",
+      "target": "components_service_card_typeicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/webhook-manager.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_components_webhook_manager_tsx",
+      "target": "components_webhook_manager_addwebhook",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/webhook-manager.tsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "src_components_webhook_manager_tsx",
+      "target": "components_webhook_manager_deletewebhook",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/webhook-manager.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "src_components_webhook_manager_tsx",
+      "target": "components_webhook_manager_togglewebhook",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/webhook-manager.tsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "src_components_webhook_manager_tsx",
+      "target": "components_webhook_manager_testwebhook",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/webhook-manager.tsx",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "src_components_webhook_manager_tsx",
+      "target": "components_webhook_manager_detectprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/incident-list.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_incident_list_tsx",
+      "target": "components_incident_list_formatduration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/incident-list.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_components_incident_list_tsx",
+      "target": "components_incident_list_incidentlist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/services/[slug]/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_app_services_slug_page_tsx",
+      "target": "components_incident_list_incidentlist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/stats/index.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_components_stats_index_tsx",
+      "target": "stats_sofia_sofiastats",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/stats/index.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_components_stats_index_tsx",
+      "target": "stats_raw_json_rawjsonstats",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/stats/index.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_components_stats_index_tsx",
+      "target": "stats_index_statsview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/stats/raw-json.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_components_stats_raw_json_tsx",
+      "target": "stats_raw_json_rawjsonstats",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/stats/sofia.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_components_stats_sofia_tsx",
+      "target": "stats_sofia_sofiastats",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/stats/sofia.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "src_components_stats_sofia_tsx",
+      "target": "stats_sofia_statcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/infra/metric-charts.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_components_infra_metric_charts_tsx",
+      "target": "infra_metric_charts_formattime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/infra/metric-charts.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "src_components_infra_metric_charts_tsx",
+      "target": "infra_metric_charts_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/retention.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_lib_retention_ts",
       "target": "lib_db_getdb",
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "src_lib_ssh_collector_ts",
-      "target": "lib_ssh_config_getsshconfig",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L6",
+      "source_file": "src/lib/retention.ts",
+      "source_location": "L11",
       "weight": 1.0,
-      "source": "src_lib_ssh_collector_ts",
-      "target": "lib_ssh_collector_execcommand",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L50",
-      "weight": 1.0,
-      "source": "src_lib_ssh_collector_ts",
-      "target": "lib_ssh_collector_parsehumansize",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L58",
-      "weight": 1.0,
-      "source": "src_lib_ssh_collector_ts",
-      "target": "lib_ssh_collector_parsedf",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L75",
-      "weight": 1.0,
-      "source": "src_lib_ssh_collector_ts",
-      "target": "lib_ssh_collector_parsefree",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L91",
-      "weight": 1.0,
-      "source": "src_lib_ssh_collector_ts",
-      "target": "lib_ssh_collector_parsetop",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L109",
-      "weight": 1.0,
-      "source": "src_lib_ssh_collector_ts",
-      "target": "lib_ssh_collector_parsedockerps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L120",
-      "weight": 1.0,
-      "source": "src_lib_ssh_collector_ts",
-      "target": "lib_ssh_collector_insertmetric",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L132",
-      "weight": 1.0,
-      "source": "src_lib_ssh_collector_ts",
-      "target": "lib_ssh_collector_collecthost",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L178",
-      "weight": 1.0,
-      "source": "src_lib_ssh_collector_ts",
-      "target": "lib_ssh_collector_collectallinfra",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L63",
-      "weight": 1.0,
-      "source": "lib_ssh_collector_parsedf",
-      "target": "lib_ssh_collector_parsehumansize",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L80",
-      "weight": 1.0,
-      "source": "lib_ssh_collector_parsefree",
-      "target": "lib_ssh_collector_parsehumansize",
+      "source": "src_lib_retention_ts",
+      "target": "lib_retention_runretention",
       "confidence_score": 1.0
     },
     {
@@ -1159,10 +1353,73 @@
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L125",
+      "source_file": "src/lib/retention.ts",
+      "source_location": "L12",
       "weight": 1.0,
-      "source": "lib_ssh_collector_insertmetric",
+      "source": "lib_retention_runretention",
+      "target": "lib_db_getdb"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/poller.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_lib_poller_ts",
+      "target": "lib_db_getdb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/poller.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_lib_poller_ts",
+      "target": "lib_poller_pollservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/poller.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "src_lib_poller_ts",
+      "target": "lib_poller_detectincident",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/poller.ts",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "src_lib_poller_ts",
+      "target": "lib_poller_pollallservices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/poller.ts",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "lib_poller_pollservice",
+      "target": "lib_poller_detectincident",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/lib/poller.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "lib_poller_pollservice",
       "target": "lib_db_getdb"
     },
     {
@@ -1170,21 +1427,32 @@
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "src/lib/ssh-collector.ts",
-      "source_location": "L133",
+      "source_file": "src/lib/poller.ts",
+      "source_location": "L51",
       "weight": 1.0,
-      "source": "lib_ssh_collector_collecthost",
-      "target": "lib_ssh_config_getsshconfig"
+      "source": "lib_poller_detectincident",
+      "target": "lib_db_getdb"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/lib/poller.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "lib_poller_detectincident",
+      "target": "lib_notifier_sendnotifications"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/api/collect-infra/route.ts",
+      "source_file": "src/app/api/poll/route.ts",
       "source_location": "L2",
       "weight": 1.0,
-      "source": "src_app_api_collect_infra_route_ts",
-      "target": "lib_ssh_collector_collectallinfra",
+      "source": "src_app_api_poll_route_ts",
+      "target": "lib_poller_pollallservices",
       "confidence_score": 1.0
     },
     {
@@ -1192,11 +1460,22 @@
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "src/app/api/collect-infra/route.ts",
-      "source_location": "L5",
+      "source_file": "src/lib/poller.ts",
+      "source_location": "L99",
       "weight": 1.0,
-      "source": "collect_infra_route_post",
-      "target": "lib_ssh_collector_collectallinfra"
+      "source": "lib_poller_pollallservices",
+      "target": "lib_db_getdb"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/app/api/poll/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "poll_route_post",
+      "target": "lib_poller_pollallservices"
     },
     {
       "relation": "imports",
@@ -1350,129 +1629,11 @@
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "src/lib/poller.ts",
-      "source_location": "L75",
-      "weight": 1.0,
-      "source": "lib_poller_detectincident",
-      "target": "lib_notifier_sendnotifications"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
       "source_file": "src/app/api/webhooks/test/route.ts",
       "source_location": "L33",
       "weight": 1.0,
       "source": "test_route_post",
       "target": "lib_notifier_sendnotifications"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/poller.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "src_lib_poller_ts",
-      "target": "lib_db_getdb",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/poller.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "src_lib_poller_ts",
-      "target": "lib_poller_pollservice",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/poller.ts",
-      "source_location": "L46",
-      "weight": 1.0,
-      "source": "src_lib_poller_ts",
-      "target": "lib_poller_detectincident",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/poller.ts",
-      "source_location": "L98",
-      "weight": 1.0,
-      "source": "src_lib_poller_ts",
-      "target": "lib_poller_pollallservices",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/poller.ts",
-      "source_location": "L32",
-      "weight": 1.0,
-      "source": "lib_poller_pollservice",
-      "target": "lib_poller_detectincident",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "src/lib/poller.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "lib_poller_pollservice",
-      "target": "lib_db_getdb"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "src/lib/poller.ts",
-      "source_location": "L51",
-      "weight": 1.0,
-      "source": "lib_poller_detectincident",
-      "target": "lib_db_getdb"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/api/poll/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "src_app_api_poll_route_ts",
-      "target": "lib_poller_pollallservices",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "src/lib/poller.ts",
-      "source_location": "L99",
-      "weight": 1.0,
-      "source": "lib_poller_pollallservices",
-      "target": "lib_db_getdb"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "src/app/api/poll/route.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "poll_route_post",
-      "target": "lib_poller_pollallservices"
     },
     {
       "relation": "imports",
@@ -1550,69 +1711,6 @@
       "target": "lib_stats_collector_collectallstats"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/retention.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "src_lib_retention_ts",
-      "target": "lib_db_getdb",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/retention.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "src_lib_retention_ts",
-      "target": "lib_retention_runretention",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "src/lib/retention.ts",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "lib_retention_runretention",
-      "target": "lib_db_getdb"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-config.ts",
-      "source_location": "L30",
-      "weight": 1.0,
-      "source": "src_lib_ssh_config_ts",
-      "target": "lib_ssh_config_getkeypath",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-config.ts",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "src_lib_ssh_config_ts",
-      "target": "lib_ssh_config_getsshconfig",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/ssh-config.ts",
-      "source_location": "L39",
-      "weight": 1.0,
-      "source": "lib_ssh_config_getsshconfig",
-      "target": "lib_ssh_config_getkeypath",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/db.ts",
@@ -1647,6 +1745,17 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_lib_ssh_collector_ts",
+      "target": "lib_db_getdb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/app/page.tsx",
       "source_location": "L2",
       "weight": 1.0,
@@ -1658,10 +1767,10 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/infra/page.tsx",
+      "source_file": "src/app/registry/page.tsx",
       "source_location": "L1",
       "weight": 1.0,
-      "source": "src_app_infra_page_tsx",
+      "source": "src_app_registry_page_tsx",
       "target": "lib_db_getdb",
       "confidence_score": 1.0
     },
@@ -1680,10 +1789,10 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/api/webhooks/[id]/route.ts",
+      "source_file": "src/app/api/webhooks/test/route.ts",
       "source_location": "L2",
       "weight": 1.0,
-      "source": "src_app_api_webhooks_id_route_ts",
+      "source": "src_app_api_webhooks_test_route_ts",
       "target": "lib_db_getdb",
       "confidence_score": 1.0
     },
@@ -1691,10 +1800,10 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/api/webhooks/test/route.ts",
+      "source_file": "src/app/api/webhooks/[id]/route.ts",
       "source_location": "L2",
       "weight": 1.0,
-      "source": "src_app_api_webhooks_test_route_ts",
+      "source": "src_app_api_webhooks_id_route_ts",
       "target": "lib_db_getdb",
       "confidence_score": 1.0
     },
@@ -1735,10 +1844,10 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/registry/page.tsx",
+      "source_file": "src/app/settings/page.tsx",
       "source_location": "L1",
       "weight": 1.0,
-      "source": "src_app_registry_page_tsx",
+      "source": "src_app_settings_page_tsx",
       "target": "lib_db_getdb",
       "confidence_score": 1.0
     },
@@ -1746,12 +1855,34 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/settings/page.tsx",
+      "source_file": "src/app/infra/page.tsx",
       "source_location": "L1",
       "weight": 1.0,
-      "source": "src_app_settings_page_tsx",
+      "source": "src_app_infra_page_tsx",
       "target": "lib_db_getdb",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "lib_ssh_collector_insertmetric",
+      "target": "lib_db_getdb"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/app/registry/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "registry_page_registrypage",
+      "target": "lib_db_getdb"
     },
     {
       "relation": "calls",
@@ -1780,6 +1911,17 @@
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
+      "source_file": "src/app/api/webhooks/test/route.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "test_route_post",
+      "target": "lib_db_getdb"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
       "source_file": "src/app/api/webhooks/[id]/route.ts",
       "source_location": "L9",
       "weight": 1.0,
@@ -1795,17 +1937,6 @@
       "source_location": "L25",
       "weight": 1.0,
       "source": "id_route_put",
-      "target": "lib_db_getdb"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "src/app/api/webhooks/test/route.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "test_route_post",
       "target": "lib_db_getdb"
     },
     {
@@ -1846,22 +1977,198 @@
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "src/app/registry/page.tsx",
+      "source_file": "src/app/settings/page.tsx",
       "source_location": "L8",
       "weight": 1.0,
-      "source": "registry_page_registrypage",
+      "source": "settings_page_settingspage",
       "target": "lib_db_getdb"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_lib_ssh_collector_ts",
+      "target": "lib_ssh_config_getsshconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_lib_ssh_collector_ts",
+      "target": "lib_ssh_collector_execcommand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "src_lib_ssh_collector_ts",
+      "target": "lib_ssh_collector_parsehumansize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "src_lib_ssh_collector_ts",
+      "target": "lib_ssh_collector_parsedf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "src_lib_ssh_collector_ts",
+      "target": "lib_ssh_collector_parsefree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "src_lib_ssh_collector_ts",
+      "target": "lib_ssh_collector_parsetop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "src_lib_ssh_collector_ts",
+      "target": "lib_ssh_collector_parsedockerps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "src_lib_ssh_collector_ts",
+      "target": "lib_ssh_collector_insertmetric",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L132",
+      "weight": 1.0,
+      "source": "src_lib_ssh_collector_ts",
+      "target": "lib_ssh_collector_collecthost",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L178",
+      "weight": 1.0,
+      "source": "src_lib_ssh_collector_ts",
+      "target": "lib_ssh_collector_collectallinfra",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "lib_ssh_collector_parsedf",
+      "target": "lib_ssh_collector_parsehumansize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "lib_ssh_collector_parsefree",
+      "target": "lib_ssh_collector_parsehumansize",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "src/app/settings/page.tsx",
-      "source_location": "L8",
+      "source_file": "src/lib/ssh-collector.ts",
+      "source_location": "L133",
       "weight": 1.0,
-      "source": "settings_page_settingspage",
-      "target": "lib_db_getdb"
+      "source": "lib_ssh_collector_collecthost",
+      "target": "lib_ssh_config_getsshconfig"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/collect-infra/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_api_collect_infra_route_ts",
+      "target": "lib_ssh_collector_collectallinfra",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/app/api/collect-infra/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "collect_infra_route_post",
+      "target": "lib_ssh_collector_collectallinfra"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-config.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "src_lib_ssh_config_ts",
+      "target": "lib_ssh_config_getkeypath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-config.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "src_lib_ssh_config_ts",
+      "target": "lib_ssh_config_getsshconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ssh-config.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "lib_ssh_config_getsshconfig",
+      "target": "lib_ssh_config_getkeypath",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1871,6 +2178,36 @@
       "weight": 1.0,
       "source": "src_app_layout_tsx",
       "target": "app_layout_rootlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/registry/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_app_registry_page_tsx",
+      "target": "registry_page_registrypage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/collect-infra/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_app_api_collect_infra_route_ts",
+      "target": "collect_infra_route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/collect-stats/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_app_api_collect_stats_route_ts",
+      "target": "collect_stats_route_post",
       "confidence_score": 1.0
     },
     {
@@ -1902,6 +2239,16 @@
       "weight": 1.0,
       "source": "webhooks_route_post",
       "target": "webhooks_route_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/webhooks/test/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_app_api_webhooks_test_route_ts",
+      "target": "test_route_post",
       "confidence_score": 1.0
     },
     {
@@ -1969,21 +2316,11 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/api/webhooks/test/route.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "src_app_api_webhooks_test_route_ts",
-      "target": "test_route_post",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/api/collect-infra/route.ts",
+      "source_file": "src/app/api/poll/route.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "source": "src_app_api_collect_infra_route_ts",
-      "target": "collect_infra_route_post",
+      "source": "src_app_api_poll_route_ts",
+      "target": "poll_route_post",
       "confidence_score": 1.0
     },
     {
@@ -2030,351 +2367,14 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/api/collect-stats/route.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "src_app_api_collect_stats_route_ts",
-      "target": "collect_stats_route_post",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/api/poll/route.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "src_app_api_poll_route_ts",
-      "target": "poll_route_post",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/services/[slug]/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "src_app_services_slug_page_tsx",
-      "target": "components_status_badge_statusbadge",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/services/[slug]/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "src_app_services_slug_page_tsx",
-      "target": "components_tabs_tabs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/services/[slug]/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "src_app_services_slug_page_tsx",
-      "target": "components_incident_list_incidentlist",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/registry/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "src_app_registry_page_tsx",
-      "target": "registry_page_registrypage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/app/settings/page.tsx",
       "source_location": "L7",
       "weight": 1.0,
       "source": "src_app_settings_page_tsx",
       "target": "settings_page_settingspage",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/service-card.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "src_components_service_card_tsx",
-      "target": "components_status_badge_statusbadge",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/service-card.tsx",
-      "source_location": "L57",
-      "weight": 1.0,
-      "source": "src_components_service_card_tsx",
-      "target": "components_service_card_formatuptime",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/service-card.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "src_components_service_card_tsx",
-      "target": "components_service_card_timeago",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/service-card.tsx",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "src_components_service_card_tsx",
-      "target": "components_service_card_typeicon",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "src_components_tabs_tsx",
-      "target": "components_tabs_tabs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/charts.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "src_components_charts_tsx",
-      "target": "components_charts_formattime",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/charts.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "source": "src_components_charts_tsx",
-      "target": "components_charts_statustovalue",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/webhook-manager.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "src_components_webhook_manager_tsx",
-      "target": "components_webhook_manager_addwebhook",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/webhook-manager.tsx",
-      "source_location": "L38",
-      "weight": 1.0,
-      "source": "src_components_webhook_manager_tsx",
-      "target": "components_webhook_manager_deletewebhook",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/webhook-manager.tsx",
-      "source_location": "L43",
-      "weight": 1.0,
-      "source": "src_components_webhook_manager_tsx",
-      "target": "components_webhook_manager_togglewebhook",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/webhook-manager.tsx",
-      "source_location": "L54",
-      "weight": 1.0,
-      "source": "src_components_webhook_manager_tsx",
-      "target": "components_webhook_manager_testwebhook",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/webhook-manager.tsx",
-      "source_location": "L72",
-      "weight": 1.0,
-      "source": "src_components_webhook_manager_tsx",
-      "target": "components_webhook_manager_detectprovider",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/incident-list.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "src_components_incident_list_tsx",
-      "target": "components_incident_list_formatduration",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/incident-list.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "src_components_incident_list_tsx",
-      "target": "components_incident_list_incidentlist",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/registry-form.tsx",
-      "source_location": "L48",
-      "weight": 1.0,
-      "source": "src_components_registry_form_tsx",
-      "target": "components_registry_form_handlesubmit",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/status-badge.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "src_components_status_badge_tsx",
-      "target": "components_status_badge_statusbadge",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/registry-client.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "src_components_registry_client_tsx",
-      "target": "components_registry_client_load",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/registry-client.tsx",
-      "source_location": "L22",
-      "weight": 1.0,
-      "source": "src_components_registry_client_tsx",
-      "target": "components_registry_client_handledelete",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/registry-client.tsx",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "components_registry_client_handledelete",
-      "target": "components_registry_client_load",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/infra/metric-charts.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "src_components_infra_metric_charts_tsx",
-      "target": "infra_metric_charts_formattime",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/infra/metric-charts.tsx",
-      "source_location": "L21",
-      "weight": 1.0,
-      "source": "src_components_infra_metric_charts_tsx",
-      "target": "infra_metric_charts_formatdate",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/stats/sofia.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "src_components_stats_sofia_tsx",
-      "target": "stats_sofia_sofiastats",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/stats/sofia.tsx",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "src_components_stats_sofia_tsx",
-      "target": "stats_sofia_statcard",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/stats/index.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "src_components_stats_index_tsx",
-      "target": "stats_sofia_sofiastats",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/stats/index.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "src_components_stats_index_tsx",
-      "target": "stats_raw_json_rawjsonstats",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/stats/index.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "src_components_stats_index_tsx",
-      "target": "stats_index_statsview",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/stats/raw-json.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "src_components_stats_raw_json_tsx",
-      "target": "stats_raw_json_rawjsonstats",
-      "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ff9a9577e3361e3cd05cf384a8cf2d7f3b25244c"
+  "built_at_commit": "a97b70cbebd35f460d36a90666db8bba0e279494"
 }
