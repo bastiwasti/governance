@@ -10,6 +10,7 @@ interface FrontendStatsData {
     valid_events: number;
     events_regex: number;
     events_llm: number;
+    events_new: number;
   } | null;
   last_rating: {
     run_id: number;
@@ -20,12 +21,16 @@ interface FrontendStatsData {
     ratings_failed: number;
     input_tokens: number;
     output_tokens: number;
+    user_ratings_written: number;
+    rating_users: string[];
   } | null;
   daily_7d: Array<{
     day: string;
     found: number;
     valid: number;
+    new_events: number;
     rated: number;
+    ratings_written: number;
     failures: number;
     input_tokens: number;
     output_tokens: number;
@@ -39,16 +44,29 @@ interface FrontendStatsData {
 }
 
 export function FrontendStats({ data }: { data: FrontendStatsData }) {
+  const counterDrift =
+    data.last_rating &&
+    Math.abs(data.last_rating.events_rated - data.last_rating.user_ratings_written) > 5;
+
   return (
     <div className="space-y-6">
       <Section title="Letzter Scrape">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           <StatCard
             label="Gestartet"
             value={formatDateTime(data.last_scrape?.started_at)}
           />
-          <StatCard label="Events gefunden" value={data.last_scrape?.events_found} />
-          <StatCard label="Valid Events" value={data.last_scrape?.valid_events} />
+          <StatCard
+            label="Events gefunden"
+            value={data.last_scrape?.events_found}
+            muted
+          />
+          <StatCard
+            label="davon NEU"
+            value={data.last_scrape?.events_new}
+            sub="erstmals gesehen"
+          />
+          <StatCard label="Valid Events" value={data.last_scrape?.valid_events} muted />
           <StatCard
             label="Dauer"
             value={formatDuration(data.last_scrape?.duration_seconds)}
@@ -62,13 +80,28 @@ export function FrontendStats({ data }: { data: FrontendStatsData }) {
       </Section>
 
       <Section title="Letzter Rating-Lauf">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           <StatCard
             label="Gestartet"
             value={formatDateTime(data.last_rating?.started_at)}
           />
-          <StatCard label="Events bewertet" value={data.last_rating?.events_rated} />
-          <StatCard label="Fehlgeschlagen" value={data.last_rating?.ratings_failed} />
+          <StatCard
+            label="Counter (status)"
+            value={data.last_rating?.events_rated}
+            sub={counterDrift ? "Drift vs. echte Inserts" : undefined}
+            tone={counterDrift ? "warn" : undefined}
+            muted={!counterDrift}
+          />
+          <StatCard
+            label="Geschrieben"
+            value={data.last_rating?.user_ratings_written}
+            sub={formatUsers(data.last_rating?.rating_users)}
+          />
+          <StatCard
+            label="Fehlgeschlagen"
+            value={data.last_rating?.ratings_failed}
+            tone={(data.last_rating?.ratings_failed ?? 0) > 0 ? "warn" : undefined}
+          />
           <StatCard
             label="Tokens (in / out)"
             value={
@@ -87,8 +120,10 @@ export function FrontendStats({ data }: { data: FrontendStatsData }) {
               <tr>
                 <th className="px-3 py-2 text-left">Tag</th>
                 <th className="px-3 py-2 text-right">Found</th>
+                <th className="px-3 py-2 text-right text-zinc-300">Neu</th>
                 <th className="px-3 py-2 text-right">Valid</th>
-                <th className="px-3 py-2 text-right">Rated</th>
+                <th className="px-3 py-2 text-right">Counter</th>
+                <th className="px-3 py-2 text-right text-zinc-300">Geschrieben</th>
                 <th className="px-3 py-2 text-right">Failures</th>
                 <th className="px-3 py-2 text-right">In-Tok</th>
                 <th className="px-3 py-2 text-right">Out-Tok</th>
@@ -98,9 +133,21 @@ export function FrontendStats({ data }: { data: FrontendStatsData }) {
               {data.daily_7d.map((row) => (
                 <tr key={row.day} className="text-zinc-200">
                   <td className="px-3 py-2 font-mono text-xs">{row.day}</td>
-                  <td className="px-3 py-2 text-right">{formatThousands(row.found)}</td>
-                  <td className="px-3 py-2 text-right">{formatThousands(row.valid)}</td>
-                  <td className="px-3 py-2 text-right">{formatThousands(row.rated)}</td>
+                  <td className="px-3 py-2 text-right text-zinc-400">
+                    {formatThousands(row.found)}
+                  </td>
+                  <td className="px-3 py-2 text-right font-semibold text-zinc-100">
+                    {formatThousands(row.new_events)}
+                  </td>
+                  <td className="px-3 py-2 text-right text-zinc-400">
+                    {formatThousands(row.valid)}
+                  </td>
+                  <td className="px-3 py-2 text-right text-zinc-400">
+                    {formatThousands(row.rated)}
+                  </td>
+                  <td className="px-3 py-2 text-right font-semibold text-zinc-100">
+                    {formatThousands(row.ratings_written)}
+                  </td>
                   <td
                     className={`px-3 py-2 text-right ${row.failures > 0 ? "text-amber-400" : ""}`}
                   >
@@ -149,15 +196,21 @@ function StatCard({
   label,
   value,
   sub,
+  tone,
+  muted,
 }: {
   label: string;
   value?: number | string;
   sub?: string;
+  tone?: "warn";
+  muted?: boolean;
 }) {
+  const valueColor =
+    tone === "warn" ? "text-amber-400" : muted ? "text-zinc-400" : "text-zinc-100";
   return (
     <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-4">
       <p className="text-sm text-zinc-500">{label}</p>
-      <p className="mt-1 text-2xl font-bold text-zinc-100">{value ?? "--"}</p>
+      <p className={`mt-1 text-2xl font-bold ${valueColor}`}>{value ?? "--"}</p>
       {sub && <p className="mt-1 text-xs text-zinc-500">{sub}</p>}
     </div>
   );
@@ -187,4 +240,11 @@ function formatDuration(seconds: number | null | undefined): string | undefined 
 function formatThousands(n: number | null | undefined): string {
   if (n == null) return "--";
   return n.toLocaleString("de-DE");
+}
+
+function formatUsers(users: string[] | undefined): string | undefined {
+  if (!users || users.length === 0) return undefined;
+  if (users.length === 1) return `von ${users[0]}`;
+  if (users.length <= 2) return `von ${users.join(", ")}`;
+  return `von ${users.length} Usern`;
 }
