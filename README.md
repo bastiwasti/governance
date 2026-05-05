@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Governance
 
-## Getting Started
+Zentrales Monitoring-Dashboard für alle Homelab-Services.
 
-First, run the development server:
+**URL:** `governance.eventig.app` (Split DNS, nur lokal erreichbar)
+
+## Features
+
+- **Health Monitoring** — Stündlicher Poll aller registrierten Services (Uptime, Response Time, Version)
+- **Incident Detection** — Automatische Erkennung von Statuswechseln (up/down/degraded), Incident-History mit Dauer
+- **Push Notifications** — Webhooks bei Incident-Events (ntfy.sh, Discord, generisch)
+- **Stats Collection** — Tägliche Erhebung app-spezifischer Kennzahlen
+- **Infra Monitoring** — CPU/RAM/Disk per SSH von docker-host und dev-VM (alle 5 Min)
+- **Data Retention** — Automatisches Cleanup alter Daten (90d/365d/30d)
+
+## Seiten
+
+| Route | Beschreibung |
+|---|---|
+| `/` | Dashboard — alle Services als Karten mit Status, Uptime, Incident-Banner |
+| `/services/[slug]` | Detailseite — 3 Tabs: Overview, Stats, Incidents |
+| `/registry` | Service Registry CRUD |
+| `/infra` | Infra-Metriken (Host-Auslastung, Container-Tabelle) |
+| `/settings` | Webhook-Verwaltung |
+
+## Stack
+
+- Next.js 16 (App Router, Turbopack)
+- better-sqlite3 (WAL mode)
+- Recharts (Charts)
+- node-cron (Scheduling)
+- ssh2 (Infra-Metriken)
+- lucide-react (Icons)
+
+## Cron-Jobs
+
+| Schedule | Job | Beschreibung |
+|---|---|---|
+| `0 * * * *` | Health Poll | Pollt alle aktiven Services via `internal_url + health_endpoint` |
+| `30 0 * * *` | Stats Collect | Sammelt Stats von allen Services mit `stats_endpoint` |
+| `*/5 * * * *` | Infra Collect | SSH: CPU/RAM/Disk von docker-host + dev-VM |
+| `0 3 * * *` | Retention Cleanup | Löscht alte Metriken (90d/365d/30d) |
+
+## Entwicklung
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Script | Beschreibung |
+|---|---|
+| `npm run dev` | Development Server |
+| `npm run build` | Production Build |
+| `npm run lint` | ESLint |
+| `npm test` | Lint + TypeScript Check (Pre-Push Hook) |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+```
+git push main → GitHub Actions (build + push) → ghcr.io → Watchtower → live
+```
 
-To learn more about Next.js, take a look at the following resources:
+Docker auf docker-host, Traefik als Reverse Proxy, HTTPS via Cloudflare DNS-01 Challenge.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Neuen Service anbinden
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Siehe [INTEGRATION.md](./INTEGRATION.md) für die Schritt-für-Schritt Anleitung.
