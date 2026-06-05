@@ -3,6 +3,7 @@ import { KartenStats } from "./karten";
 import { SchafkopfStats } from "./schafkopf-tracker";
 import { WebscraperStats } from "./webscraper";
 import { FrontendStats } from "./frontend";
+import { FitnessStats } from "./fitness";
 import { RawJsonStats } from "./raw-json";
 
 export function StatsView({
@@ -23,6 +24,8 @@ export function StatsView({
       return <WebscraperStats data={data as Parameters<typeof WebscraperStats>[0]["data"]} />;
     case "frontend":
       return <FrontendStats data={data as Parameters<typeof FrontendStats>[0]["data"]} />;
+    case "fitness":
+      return <FitnessStats data={data as Parameters<typeof FitnessStats>[0]["data"]} />;
     default:
       return <RawJsonStats data={data} />;
   }
