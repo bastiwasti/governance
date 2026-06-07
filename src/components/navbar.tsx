@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X, LayoutDashboard, Server, HardDrive, Settings } from "lucide-react";
+import { Menu, X, LayoutDashboard, Server, HardDrive, Settings, Database } from "lucide-react";
 
 const navItems = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
   { href: "/registry", label: "Registry", icon: Server },
   { href: "/infra", label: "Infra", icon: HardDrive },
+  { href: "/backups", label: "Backups", icon: Database },
   { href: "/settings", label: "Settings", icon: Settings },
 ];
 

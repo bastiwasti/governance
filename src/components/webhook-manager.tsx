@@ -8,9 +8,23 @@ export function WebhookManager({ webhooks: initial }: { webhooks: Webhook[] }) {
   const [showForm, setShowForm] = useState(false);
   const [url, setUrl] = useState("");
   const [label, setLabel] = useState("");
-  const [events, setEvents] = useState("down,up");
+  const [events, setEvents] = useState<string[]>(["down", "up"]);
   const [testing, setTesting] = useState<number | null>(null);
   const [error, setError] = useState("");
+
+  const allEvents = [
+    { value: "down", label: "Service Down" },
+    { value: "up", label: "Service Up" },
+    { value: "degraded", label: "Degraded" },
+    { value: "backup_failed", label: "Backup Fehler" },
+    { value: "backup_warning", label: "Backup Warnung" },
+  ];
+
+  function toggleEvent(value: string) {
+    setEvents((prev) =>
+      prev.includes(value) ? prev.filter((e) => e !== value) : [...prev, value]
+    );
+  }
 
   async function addWebhook() {
     setError("");
@@ -19,7 +33,7 @@ export function WebhookManager({ webhooks: initial }: { webhooks: Webhook[] }) {
     const res = await fetch("/api/webhooks", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url: url.trim(), label: label.trim() || null, events }),
+      body: JSON.stringify({ url: url.trim(), label: label.trim() || null, events: events.join(",") }),
     });
 
     if (!res.ok) {
@@ -31,7 +45,7 @@ export function WebhookManager({ webhooks: initial }: { webhooks: Webhook[] }) {
     setWebhooks([webhook, ...webhooks]);
     setUrl("");
     setLabel("");
-    setEvents("down,up");
+    setEvents(["down", "up"]);
     setShowForm(false);
   }
 
@@ -107,7 +121,10 @@ export function WebhookManager({ webhooks: initial }: { webhooks: Webhook[] }) {
               </div>
               <p className="mt-1 text-xs text-zinc-500 break-all">{w.url}</p>
               <p className="mt-1 text-xs text-zinc-600">
-                Events: {w.events}
+                Events: {w.events.split(",").map((e) => {
+                  const found = allEvents.find((a) => a.value === e.trim());
+                  return found ? found.label : e.trim();
+                }).join(", ")}
               </p>
             </div>
             <div className="flex items-center gap-2">
@@ -158,16 +175,20 @@ export function WebhookManager({ webhooks: initial }: { webhooks: Webhook[] }) {
             />
           </div>
           <div>
-            <label className="block text-xs text-zinc-500 mb-1">Events</label>
-            <select
-              value={events}
-              onChange={(e) => setEvents(e.target.value)}
-              className="w-full rounded bg-zinc-800 px-3 py-2 text-sm text-zinc-200 focus:outline-none focus:ring-1 focus:ring-zinc-600"
-            >
-              <option value="down,up">Down + Up</option>
-              <option value="down">Nur Down</option>
-              <option value="down,degraded,up">Down + Degraded + Up</option>
-            </select>
+            <label className="block text-xs text-zinc-500 mb-2">Events</label>
+            <div className="flex flex-wrap gap-3">
+              {allEvents.map((ev) => (
+                <label key={ev.value} className="flex items-center gap-1.5 text-sm text-zinc-300 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={events.includes(ev.value)}
+                    onChange={() => toggleEvent(ev.value)}
+                    className="rounded border-zinc-600 bg-zinc-800"
+                  />
+                  {ev.label}
+                </label>
+              ))}
+            </div>
           </div>
           {error && <p className="text-xs text-red-400">{error}</p>}
           <div className="flex gap-2">

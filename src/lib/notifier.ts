@@ -16,9 +16,11 @@ function getActiveWebhooks(): WebhookRow[] {
 }
 
 function shouldFire(webhook: WebhookRow, event: string): boolean {
-  const events = webhook.events.split(",").map((e) => e.trim());
-  const eventType = event.split(".")[1];
-  return events.includes(eventType);
+  const webhookEvents = webhook.events.split(",").map((e) => e.trim());
+  const [prefix, type] = event.split(".");
+  if (prefix === "service") return webhookEvents.includes(type);
+  if (prefix === "backup") return webhookEvents.includes(`backup_${type}`);
+  return false;
 }
 
 function buildNtfyPayload(
@@ -111,5 +113,67 @@ export async function sendNotifications(
 
   await Promise.allSettled(
     relevant.map((w) => sendWebhook(w, service, event))
+  );
+}
+
+async function sendBackupWebhook(
+  webhook: WebhookRow,
+  status: string,
+  message: string
+): Promise<void> {
+  try {
+    const isNtfy = webhook.url.includes("ntfy.sh");
+    const isDiscord =
+      webhook.url.includes("discord.com") || webhook.url.includes("discordapp.com");
+
+    if (isNtfy) {
+      await fetch(webhook.url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain",
+          Title: status === "failed" ? "Backup FEHLGESCHLAGEN" : "Backup WARNUNG",
+          Priority: status === "failed" ? "high" : "default",
+          Tags: status === "failed" ? "rotating_light" : "warning",
+        },
+        body: message,
+        signal: AbortSignal.timeout(5000),
+      });
+    } else if (isDiscord) {
+      const emoji = status === "failed" ? "🔴" : "🟡";
+      await fetch(webhook.url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          content: `${emoji} **Backup ${status === "failed" ? "FEHLGESCHLAGEN" : "WARNUNG"}**: ${message}`,
+        }),
+        signal: AbortSignal.timeout(5000),
+      });
+    } else {
+      await fetch(webhook.url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          event: `backup.${status}`,
+          message,
+          timestamp: new Date().toISOString(),
+        }),
+        signal: AbortSignal.timeout(5000),
+      });
+    }
+  } catch (err) {
+    console.error(`Backup webhook failed (${webhook.url}):`, err);
+  }
+}
+
+export async function sendBackupNotification(
+  status: string,
+  message: string
+): Promise<void> {
+  const webhooks = getActiveWebhooks();
+  const event = `backup.${status}`;
+  const relevant = webhooks.filter((w) => shouldFire(w, event));
+
+  await Promise.allSettled(
+    relevant.map((w) => sendBackupWebhook(w, status, message))
   );
 }

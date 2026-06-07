@@ -23,6 +23,12 @@ export async function register() {
       runRetention();
     });
 
+    const { runBackupCheck } = await import("./lib/backup-checker");
+
+    cron.schedule("0 4 * * *", () => {
+      runBackupCheck().catch(console.error);
+    });
+
     void pollAllServices().catch(console.error);
     void collectAllStats().catch(console.error);
     void collectAllInfra().catch(console.error);

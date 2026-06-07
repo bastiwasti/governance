@@ -72,6 +72,24 @@ export type WebhookCreateInput = Omit<Webhook, "id" | "created_at">;
 
 export type ServiceUpdateInput = Partial<ServiceCreateInput>;
 
+export interface BackupCheck {
+  id: number;
+  check_time: string;
+  status: "success" | "warning" | "failed";
+  databases_json: string | null;
+  log_tail: string | null;
+  message: string | null;
+}
+
+export interface BackupFile {
+  name: string;
+  size_bytes: number;
+  size_human: string;
+  modified: string;
+  database: string;
+  is_today: boolean;
+}
+
 export interface ServiceWithLatestCheck extends Service {
   latest_status: "up" | "degraded" | "down" | "unknown";
   latest_response_ms: number | null;

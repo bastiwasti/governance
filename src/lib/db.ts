@@ -77,6 +77,16 @@ CREATE TABLE IF NOT EXISTS webhooks (
   is_active INTEGER NOT NULL DEFAULT 1,
   created_at TEXT DEFAULT (datetime('now'))
 );
+
+CREATE TABLE IF NOT EXISTS backup_checks (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  check_time TEXT DEFAULT (datetime('now')),
+  status TEXT NOT NULL,
+  databases_json TEXT,
+  log_tail TEXT,
+  message TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_backup_checks_time ON backup_checks(check_time DESC);
 `;
 
 const globalForDb = globalThis as unknown as {
