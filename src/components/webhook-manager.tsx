@@ -6,6 +6,10 @@ import type { Webhook } from "@/lib/types";
 export function WebhookManager({ webhooks: initial }: { webhooks: Webhook[] }) {
   const [webhooks, setWebhooks] = useState(initial);
   const [showForm, setShowForm] = useState(false);
+  const [editingId, setEditingId] = useState<number | null>(null);
+  const [editUrl, setEditUrl] = useState("");
+  const [editLabel, setEditLabel] = useState("");
+  const [editEvents, setEditEvents] = useState<string[]>([]);
   const [url, setUrl] = useState("");
   const [label, setLabel] = useState("");
   const [events, setEvents] = useState<string[]>(["down", "up"]);
@@ -20,10 +24,8 @@ export function WebhookManager({ webhooks: initial }: { webhooks: Webhook[] }) {
     { value: "backup_warning", label: "Backup Warnung" },
   ];
 
-  function toggleEvent(value: string) {
-    setEvents((prev) =>
-      prev.includes(value) ? prev.filter((e) => e !== value) : [...prev, value]
-    );
+  function toggleEvent(value: string, setter: React.Dispatch<React.SetStateAction<string[]>>, current: string[]) {
+    setter(current.includes(value) ? current.filter((e) => e !== value) : [...current, value]);
   }
 
   async function addWebhook() {
@@ -47,6 +49,38 @@ export function WebhookManager({ webhooks: initial }: { webhooks: Webhook[] }) {
     setLabel("");
     setEvents(["down", "up"]);
     setShowForm(false);
+  }
+
+  async function saveEdit() {
+    if (editingId === null || !editUrl.trim()) return;
+    setError("");
+
+    const res = await fetch(`/api/webhooks/${editingId}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        url: editUrl.trim(),
+        label: editLabel.trim() || null,
+        events: editEvents.join(","),
+      }),
+    });
+
+    if (!res.ok) {
+      setError("Fehler beim Speichern");
+      return;
+    }
+
+    const updated = await res.json();
+    setWebhooks(webhooks.map((w) => (w.id === editingId ? (updated as Webhook) : w)));
+    setEditingId(null);
+  }
+
+  function startEdit(w: Webhook) {
+    setEditingId(w.id);
+    setEditUrl(w.url);
+    setEditLabel(w.label ?? "");
+    setEditEvents(w.events.split(",").map((e) => e.trim()));
+    setError("");
   }
 
   async function deleteWebhook(id: number) {
@@ -104,51 +138,111 @@ export function WebhookManager({ webhooks: initial }: { webhooks: Webhook[] }) {
           key={w.id}
           className="rounded-lg border border-zinc-800 bg-zinc-900 p-4"
         >
-          <div className="flex items-start justify-between">
-            <div>
-              <div className="flex items-center gap-2">
-                <p className="text-sm font-medium text-zinc-200">
-                  {w.label || detectProvider(w.url)}
-                </p>
-                <span className="rounded bg-zinc-800 px-1.5 py-0.5 text-xs text-zinc-500">
-                  {detectProvider(w.url)}
-                </span>
-                {!w.is_active && (
-                  <span className="rounded bg-zinc-800 px-1.5 py-0.5 text-xs text-zinc-600">
-                    Inaktiv
-                  </span>
-                )}
+          {editingId === w.id ? (
+            <div className="space-y-3">
+              <div>
+                <label className="block text-xs text-zinc-500 mb-1">URL</label>
+                <input
+                  type="url"
+                  value={editUrl}
+                  onChange={(e) => setEditUrl(e.target.value)}
+                  className="w-full rounded bg-zinc-800 px-3 py-2 text-sm text-zinc-200 focus:outline-none focus:ring-1 focus:ring-zinc-600"
+                />
               </div>
-              <p className="mt-1 text-xs text-zinc-500 break-all">{w.url}</p>
-              <p className="mt-1 text-xs text-zinc-600">
-                Events: {w.events.split(",").map((e) => {
-                  const found = allEvents.find((a) => a.value === e.trim());
-                  return found ? found.label : e.trim();
-                }).join(", ")}
-              </p>
+              <div>
+                <label className="block text-xs text-zinc-500 mb-1">Label (optional)</label>
+                <input
+                  type="text"
+                  value={editLabel}
+                  onChange={(e) => setEditLabel(e.target.value)}
+                  className="w-full rounded bg-zinc-800 px-3 py-2 text-sm text-zinc-200 focus:outline-none focus:ring-1 focus:ring-zinc-600"
+                />
+              </div>
+              <div>
+                <label className="block text-xs text-zinc-500 mb-2">Events</label>
+                <div className="flex flex-wrap gap-3">
+                  {allEvents.map((ev) => (
+                    <label key={ev.value} className="flex items-center gap-1.5 text-sm text-zinc-300 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={editEvents.includes(ev.value)}
+                        onChange={() => toggleEvent(ev.value, setEditEvents, editEvents)}
+                        className="rounded border-zinc-600 bg-zinc-800"
+                      />
+                      {ev.label}
+                    </label>
+                  ))}
+                </div>
+              </div>
+              {error && <p className="text-xs text-red-400">{error}</p>}
+              <div className="flex gap-2">
+                <button
+                  onClick={saveEdit}
+                  className="rounded bg-zinc-700 px-4 py-1.5 text-sm text-zinc-200 hover:bg-zinc-600"
+                >
+                  Speichern
+                </button>
+                <button
+                  onClick={() => { setEditingId(null); setError(""); }}
+                  className="rounded bg-zinc-800 px-4 py-1.5 text-sm text-zinc-400 hover:bg-zinc-700"
+                >
+                  Abbrechen
+                </button>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => testWebhook(w.id)}
-                disabled={testing === w.id}
-                className="rounded bg-zinc-800 px-3 py-1 text-xs text-zinc-300 hover:bg-zinc-700 disabled:opacity-50"
-              >
-                {testing === w.id ? "..." : "Test"}
-              </button>
-              <button
-                onClick={() => toggleWebhook(w.id, w.is_active)}
-                className="rounded bg-zinc-800 px-3 py-1 text-xs text-zinc-300 hover:bg-zinc-700"
-              >
-                {w.is_active ? "Deaktivieren" : "Aktivieren"}
-              </button>
-              <button
-                onClick={() => deleteWebhook(w.id)}
-                className="rounded bg-zinc-800 px-3 py-1 text-xs text-red-400 hover:bg-zinc-700"
-              >
-                Löschen
-              </button>
+          ) : (
+            <div className="flex items-start justify-between">
+              <div>
+                <div className="flex items-center gap-2">
+                  <p className="text-sm font-medium text-zinc-200">
+                    {w.label || detectProvider(w.url)}
+                  </p>
+                  <span className="rounded bg-zinc-800 px-1.5 py-0.5 text-xs text-zinc-500">
+                    {detectProvider(w.url)}
+                  </span>
+                  {!w.is_active && (
+                    <span className="rounded bg-zinc-800 px-1.5 py-0.5 text-xs text-zinc-600">
+                      Inaktiv
+                    </span>
+                  )}
+                </div>
+                <p className="mt-1 text-xs text-zinc-500 break-all">{w.url}</p>
+                <p className="mt-1 text-xs text-zinc-600">
+                  Events: {w.events.split(",").map((e) => {
+                    const found = allEvents.find((a) => a.value === e.trim());
+                    return found ? found.label : e.trim();
+                  }).join(", ")}
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => startEdit(w)}
+                  className="rounded bg-zinc-800 px-3 py-1 text-xs text-zinc-300 hover:bg-zinc-700"
+                >
+                  Bearbeiten
+                </button>
+                <button
+                  onClick={() => testWebhook(w.id)}
+                  disabled={testing === w.id}
+                  className="rounded bg-zinc-800 px-3 py-1 text-xs text-zinc-300 hover:bg-zinc-700 disabled:opacity-50"
+                >
+                  {testing === w.id ? "..." : "Test"}
+                </button>
+                <button
+                  onClick={() => toggleWebhook(w.id, w.is_active)}
+                  className="rounded bg-zinc-800 px-3 py-1 text-xs text-zinc-300 hover:bg-zinc-700"
+                >
+                  {w.is_active ? "Deaktivieren" : "Aktivieren"}
+                </button>
+                <button
+                  onClick={() => deleteWebhook(w.id)}
+                  className="rounded bg-zinc-800 px-3 py-1 text-xs text-red-400 hover:bg-zinc-700"
+                >
+                  Löschen
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       ))}
 
@@ -182,7 +276,7 @@ export function WebhookManager({ webhooks: initial }: { webhooks: Webhook[] }) {
                   <input
                     type="checkbox"
                     checked={events.includes(ev.value)}
-                    onChange={() => toggleEvent(ev.value)}
+                    onChange={() => toggleEvent(ev.value, setEvents, events)}
                     className="rounded border-zinc-600 bg-zinc-800"
                   />
                   {ev.label}
