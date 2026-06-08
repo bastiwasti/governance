@@ -57,7 +57,9 @@ function extractDbName(filename: string): string {
 
 function getTodayStr(): string {
   const d = new Date();
-  return `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, "0")}${String(d.getDate()).padStart(2, "0")}`;
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  return `${d.getFullYear()}-${mm}-${dd}`;
 }
 
 export async function listBackupFiles(): Promise<BackupFile[]> {
